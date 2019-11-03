@@ -1,0 +1,75 @@
+Before we go on with the prove of the running time, let us take a look at a small example to demonstrate the dynamic program. The alphabet $\Sigma = \{a,b,c\}$ consists of 3 letters. The following table defines the costs $c_{match}(\tau_1,\tau_2)$:\\
+\begin{tabular}{ l | c c c }
+ & a & b & c \\
+\hline
+a & 0 & 2 & 3 \\
+b & 2 & 0 & 1 \\
+c & 3 & 1 & 0
+\end{tabular}
+Furthermore, the cost of deleting any node $c_{del}(\tau) = 3 \forall \tau \in \{a,b,c,\}$. For a better overview, every label is associated with a certain color. $a$ is red, $b$ is blue and $c$ is green. Now let's have a look at the two trees $F$ and $G$:
+\begin{displaymath}
+		\xymatrix @R=3mm @C=2mm{
+		&&&&F&&&\ar@{-}[dddd]&&&&G&\\
+		&&&&*[blue]+[o][F-:blue]{8_F^b}\ar@{-}[dlll]\ar@{-}[d]\ar@{-}[drr]&&&&&&&*[green]+[o][F-:green]{10_G^c}\ar@{-}[dll]\ar@{-}[drr]&\\
+		&*[red]+[o][F-:red]{3_F^a}\ar@{-}[dl]\ar@{-}[dr]&&&*[red]+[o][F-:red]{6_F^a}\ar@{-}[dl]\ar@{-}[dr]&&*[green]+[o][F-:green]{7_F^c}&&&*[blue]+[o][F-:blue]{6_G^b}\ar@{-}[dl]\ar@{-}[d]\ar@{-}[dr]&&&&*[red]+[o][F-:red]{9_G^a}\ar@{-}[dl]\ar@{-}[dr]\\
+		*[red]+[o][F-:red]{1_F^a}&&*[green]+[o][F-:green]{2_F^c}&*[blue]+[o][F-:blue]{4_F^b}&&*[green]+[o][F-:green]{5_F^c}&&&*[green]+[o][F-:green]{1_G^c}&*[red]+[o][F-:red]{4_G^a}\ar@{-}[dl]\ar@{-}[dr]&*[blue]+[o][F-:blue]{5_G^b}&&*[green]+[o][F-:green]{7_G^c}&&*[green]+[o][F-:green]{8_G^c}\\
+		&&&&&&&&*[blue]+[o][F-:blue]{2_G^b}&&*[red]+[o][F-:red]{3_G^a}&&\\
+		}
+\end{displaymath}
+Before we start with the programm, let's have a short look at some obvious facts:
+\begin{itemize}
+\item Deletion is expensive. Relabeling is always at least as cheap as a deletion. In all other cases than matching a node with label $a$ to another one with label $c$, it is strictly cheaper to relabel.
+\item Relabeling is symmetric. It doesn't matter whether you relabel a node with label $b$ to have the label $c$ or the other way around. This obviously results in a large number of different solutions with the same costs.
+\end{itemize}
+Now lets start with the step by step guide through the dynamic programm:
+\textit{Step 1:}\\
+$F$ and $G$ both contain nodes and are trees. Therefore the rightmost trees are in both cases the complete trees themselves. So we have to compare the roots of $F$ and $G$ which are $8_F$ and $10_G$. We can either match them (this costs just $1$) or delete any of those two, which costs $3$. After some investigation, it is clear that matching them is obviously the best choice.
+$$ => \delta(F,G) = \delta(F^{\circ}, G^{\circ}) + c_{match}(b,c) = \delta(F^{\circ}, G^{\circ}) + 1$$
+\textit{Step 2:}\\
+\begin{figure}[H]
+\xymatrix @R=3mm @C=2mm{
+		&&&&F^{\circ}&&&\ar@{-}[ddd]&&&&G^{\circ}&\\
+		&*[red]+[o][F-:red]{3_F^a}\ar@{-}[dl]\ar@{-}[dr]&&&*[red]+[o][F-:red]{6_F^a}\ar@{-}[dl]\ar@{-}[dr]&&*[green]+[o][F-:green]{7_F^c}&&&*[blue]+[o][F-:blue]{6_G^b}\ar@{-}[dl]\ar@{-}[d]\ar@{-}[dr]&&&&*[red]+[o][F-:red]{9_G^a}\ar@{-}[dl]\ar@{-}[dr]\\
+		*[red]+[o][F-:red]{1_F^a}&&*[green]+[o][F-:green]{2_F^c}&*[blue]+[o][F-:blue]{4_F^b}&&*[green]+[o][F-:green]{5_F^c}&&&*[green]+[o][F-:green]{1_G^c}&*[red]+[o][F-:red]{4_G^a}\ar@{-}[dl]\ar@{-}[dr]&*[blue]+[o][F-:blue]{5_G^b}&&*[green]+[o][F-:green]{7_G^c}&&*[green]+[o][F-:green]{8_G^c}\\
+		&&&&&&&&*[blue]+[o][F-:blue]{2_G^b}&&*[red]+[o][F-:red]{3_G^a}&&\\
+	}
+\end{figure}
+The roots of the rightmost trees in $F^{\circ}$ and $G^{\circ}$ are $7_F$ and $4_G$. In this case we have the same costs whether we delete one node or match them. So we have to take a closer look at the three possibilities that we have, especially on the minimum number of nodes that we have to delete in all three possible branches.
+\textit{Step 2a:} match $7_F$ and $4_G$.\\
+In the following progression, we have to delete the children of $4_G$ (as $7_F$ doesn't have any children) and at least one of the two other subtrees of $F^{\circ}$. So without the last steps of mapping $L_{G^{\circ}}$ and the resulting subtree of $F^{\circ}$ we have to delete at least 5 nodes.\\
+\textit{Step 2b:} deleting $4_G$.\\
+The resulting subforest of $G$ has two single nodes, which means that we have to map them to a subforest of $F^{\circ}$ in some kind. That demands a deletion of at least 2 nodes in $F^{\circ}$, so all in all a deletion of 3 nodes (once again without considering the mapping of $L_{G^{\circ}}$. \\
+\textit{Step 2c:} deleting $7_F$.\\
+This is obviously the best choice. Expect for the mapping of $L_{G^{\circ}}$ we don't have to delete any further nodes. In addition to that, the subtrees starting at $6_F$ and $4_G$ already look very much alike.\\
+So we go on with deleting $7_G$.
+$$ => \delta(F^{\circ}, G^{\circ}) = \delta(F^{\circ}-7_F, G^{\circ}) + c_{del}(7_F) = \delta(F^{\circ}-7_F, G^{\circ}) + 3$$
+$$ => \delta(F,G) = \delta(F^{\circ}-7_F, G^{\circ}) + 4 $$
+\textit{Step 3:}
+\begin{figure}[H]
+\xymatrix @R=3mm @C=2mm{
+		&&F^{\circ}&-7_F&&&\ar@{-}[ddd]&&&&G^{\circ}&\\
+		&*[red]+[o][F-:red]{3_F^a}\ar@{-}[dl]\ar@{-}[dr]&&&*[red]+[o][F-:red]{6_F^a}\ar@{-}[dl]\ar@{-}[dr]&&&&*[blue]+[o][F-:blue]{6_G^b}\ar@{-}[dl]\ar@{-}[d]\ar@{-}[dr]&&&*[red]+[o][F-:red]{9_G^a}\ar@{-}[dl]\ar@{-}[dr]\\
+		*[red]+[o][F-:red]{1_F^a}&&*[green]+[o][F-:green]{2_F^c}&*[blue]+[o][F-:blue]{4_F^b}&&*[green]+[o][F-:green]{5_F^c}&&*[green]+[o][F-:green]{1_G^c}&*[red]+[o][F-:red]{4_G^a}\ar@{-}[dl]\ar@{-}[dr]&*[blue]+[o][F-:blue]{5_G^b}&*[green]+[o][F-:green]{7_G^c}&&*[green]+[o][F-:green]{8_G^c}\\
+		&&&&&&&*[blue]+[o][F-:blue]{2_G^b}&&*[red]+[o][F-:red]{3_G^a}&&\\
+	}
+\end{figure}
+The rightmost roots are $6_F$ and $9_G$. Both of them are labelled $a$, so it is trivial that we should match those two nodes. After this step, we will match $5_F$ and $8_G$ since both of them have the label $c$. Last but not least, it is obviously the cheapest to match $4_F$ and $7_G$ and just relabel one of them. If we define the subtree of $F^{\circ}$ rooted at $3_F$ as $F'$ and the subtree of $G^{\circ}$ rooted at $6_G$ as $G'$, then the following equality holds:
+$$ \delta(F^{\circ}-7_F, G^{\circ}) = \delta(F',G') + c_{match}(b,c) + c_{match}(a,a) + c_{match}(c,c) = \delta(F',G') + 1$$
+$$ => \delta(F,G) = \delta(F',G') + 5$$
+\textit{Step 5:}
+\begin{figure}[H]
+\xymatrix @R=3mm @C=2mm{
+		&F'&&\ar@{-}[ddd]&&G'&\\
+		&*[red]+[o][F-:red]{3_F^a}\ar@{-}[dl]\ar@{-}[dr]&&&&*[blue]+[o][F-:blue]{6_G^b}\ar@{-}[dl]\ar@{-}[d]\ar@{-}[dr]\\
+		*[red]+[o][F-:red]{1_F^a}&&*[green]+[o][F-:green]{2_F^c}&&*[green]+[o][F-:green]{1_G^c}&*[red]+[o][F-:red]{4_G^a}\ar@{-}[dl]\ar@{-}[dr]&*[blue]+[o][F-:blue]{5_G^b}\\
+		&&&&*[blue]+[o][F-:blue]{2_G^b}&&*[red]+[o][F-:red]{3_G^a}&&\\
+	}
+\end{figure}
+It is trivial that we have to delete at least three nodes from $G'$ and that the cheapest solution will delete exactly three nodes. The easiest way to go on is to make a case destinction.\\
+\textit{Step 5a:} matching $3_F$ and $6_G$.\\
+$c_{match}(a,b)=2$. If we go on, we immediately see, that we have to relabel at least one additional node. The lower bound for the costs of relabelling is $1$. This lower bound can be achieved if we match $1_F$ with $4_G$ (or equivalently $3_G$ after deleting $4_G$) and $2_F$ with $5_G$, since we only have to change the label of $2_F$ or $5_G$ respectively. Of course we have to delete the other three nodes. All in all, this case would cost $3 + 3*3 = 12$.\\
+\textit{Step 5b:} deleting $6_G$.\\
+$G'^{\circ}$ consists of two single nodes and the subtree rooted at $4_G$. We have the possibility to delete $3_F$ or match it to one of the nodes in $G'^{\circ}$. If we delete it, then we have left only two nodes in $F'^{\circ}$ and four nodes in $G'^{\circ}$. Therefore we have to delete at least four nodes overall, leading to a mapping which costs $\geq 12$. That means that we cannot improve our previous result, so we can forget about this possibility. Furthermore, if we map $3_F$ to any other node than $4_G$, we have to delete both children of $3_F$ since no other node has any children other than $4_G$. This would also not lead to an improvement. So the only possibility left is to match $3_F$ to $4_G$, $1_F$ to $2_G$ and $2_F$ to $3_G$. The costs for this possibility are $0 + 2 + 3 + 3*3 = 14$. To conclude: deleting $6_G$ doesn't give us an improvement.
+$$ => \delta(F',G') = 12$$
+$$ => \delta(F,G) = \delta(F',G') + 5 = 12 + 5 = 17$$
+This means the tree edit distance between $F$ and $G$ is 17. The computation above was based on comparing different branching possibilities. The algorithm of Sasha and Zhang would compute any possible combination of relevant subproblems and would yield the same result as we figured out above. 

@@ -1,0 +1,159 @@
+ \newcommand{\mypapersize}{A4}
+
+\newcommand{\mylaterality}{twoside}
+
+\newcommand{\mydraft}{false}
+
+\newcommand{\myparskip}{half}
+
+\newcommand{\myBCOR}{0mm}
+
+\newcommand{\myfontsize}{12pt}
+
+\newcommand{\mylinespread}{1.0}
+
+\newcommand{\mylanguage}{ngerman,american}
+
+\newcommand{\mybiblatexstyle}{authoryear}
+
+\newcommand{\mybiblatexdashed}{false}  
+
+\newcommand{\mybiblatexbackref}{true} 
+
+%\newcommand{\mybiblatexfile}{references-biblatex.bib}
+
+\newcommand{\mydispositioncolor}{0,0,0}
+
+\newcommand{\mycolorlinks}{true} 
+
+\newcommand{\mytitlepage}{template/title_Thesis_TU_Graz}
+
+\newcommand{\mytodonotesoptions}{}
+
+\input{template/preamble}%% DO NOT REMOVE THIS LINE!
+
+\setboolean{myaddcolophon}{false}
+
+\setboolean{myaddlistoftodos}{false}  
+
+%% ========================================================================
+%%%% Document metadata
+%% ========================================================================
+
+%% general metadata:
+\newcommand{\myauthor}{Clemens Andritsch}
+\newcommand{\mytitle}{Comparing Trees} 
+\newcommand{\mysubject}{SUBJECT} 
+\newcommand{\mykeywords}{KEYWORDS} 
+
+\newcommand{\myworktitle}{Master's Seminar}  
+\newcommand{\mygrade}{Bachelor of Science}
+\newcommand{\mystudy}{Mathematik}
+\newcommand{\myuniversity}{Graz University of Technology}
+\newcommand{\myinstitute}{Institute for Discrete Mathematics}
+\newcommand{\myinstitutehead}{Univ.-Prof. Dipl.-Ing. Dr.rer.nat. Woess Wolfgang} 
+\newcommand{\mysupervisor}{Ao.Univ.-Prof. Dipl.-Ing. Dr.techn. Dragoti-Cela Eranda}
+\newcommand{\myhomestreet}{Franckstraße 35 / 6} 
+\newcommand{\myhometown}{Graz}
+\newcommand{\myhomepostalnumber}{8010} 
+\newcommand{\mysubmissionmonth}{July} 
+\newcommand{\mysubmissionyear}{2018} 
+\newcommand{\mysubmissiontown}{\myhometown} 
+
+\newcommand{\myid}{01330358} 
+\newcommand{\mylecture}{Graph Theory} 
+
+
+\input{template/mycommands}
+
+\input{template/typographic_settings}
+
+
+\newcommand{\myLaT}{\LaTeX{}@TUG\xspace} 
+
+\hyphenation{ex-am-ple hy-phen-ate}  
+
+\setlength{\parindent}{15 pt}
+
+ %Theorems
+\theoremstyle{plain}
+ 
+\declaretheorem[name={Theorem},refname={theorem,theorems},
+Refname={Theorem,Theorems}, numberwithin=chapter]{thm}
+
+\declaretheorem[name={Lemma},refname={lemma,lemmata},
+Refname={Lemma, Lemmata}, numberlike=thm]{lem}
+
+\declaretheorem[name={Corollary},refname={corollary,corollaries},
+Refname={Corollary, Corollaries}, numberlike=thm]{cor}
+
+ %Definitions 
+\theoremstyle{definition}
+\declaretheorem[name={Definition}, refname={definition,definitions},
+Refname={Definition,Definitions}, numberlike=thm]{defin}
+
+
+ %Remarks
+\theoremstyle{remark}
+\declaretheorem[numbered=no,name={Remark}]{rem}
+
+\declaretheorem[numbered=no,name={Task}]{tas}
+\declaretheorem[numberlike=thm, name={Claim}]{cla}
+
+\hypersetup{hidelinks=true}
+
+\definecolor{codegreen}{rgb}{0,0.6,0}
+\definecolor{codegray}{rgb}{0.5,0.5,0.5}
+\definecolor{codepurple}{rgb}{0.58,0,0.82}
+\definecolor{backcolour}{rgb}{0.95,0.95,0.92}
+
+\lstdefinestyle{mystyle}{
+    backgroundcolor=\color{backcolour},   
+    commentstyle=\color{codegreen},
+    keywordstyle=\color{magenta},
+    numberstyle=\tiny\color{codegray},
+    stringstyle=\color{codepurple},
+    basicstyle=\ttfamily\footnotesize,
+    breakatwhitespace=false,         
+    breaklines=true,                 
+    captionpos=b,                    
+    keepspaces=true,                 
+    numbers=left,                    
+    numbersep=5pt,                  
+    showspaces=false,                
+    showstringspaces=false,
+    showtabs=false,                  
+    tabsize=2
+}
+
+\lstset{style=mystyle}
+ %========================================================================
+
+\begin{document}
+
+\frontmatter                    
+
+\input{colophon}          
+
+\input{\mytitlepage}            
+
+\tableofcontents             
+
+\mainmatter            
+\let\cleardoublepage\clearpage                     
+\begin{spacing}{1.2}
+
+\input{00_introduction.tex}
+\input{01_basics_and_notation.tex}
+\input{02_tree_edit_distance.tex}
+\input{03_flexible_tree_matching.tex}
+\input{04_robinson_foulds.tex}
+ \input{05_implementation_GF.tex}
+\input{06_implementation_TED.tex}
+\input{07_conclusion.tex}
+%\appendix                       %% closes main document, appendix follows until end; only available in book-classes
+%\addpart*{Appendix}             %% adding Appendix to tableofcontents
+\input{references.tex}  
+\end{spacing}
+
+\end{document}
