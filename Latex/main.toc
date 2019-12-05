@@ -25,11 +25,11 @@
 \contentsline {section}{\numberline {6.1}Preparation and Overview}{39}{section.6.1}% 
 \contentsline {subsection}{\numberline {6.1.1}Creating Test Instances}{40}{subsection.6.1.1}% 
 \contentsline {subsection}{\numberline {6.1.2}Distance Function}{44}{subsection.6.1.2}% 
-\contentsline {section}{\numberline {6.2}Implementation Details}{44}{section.6.2}% 
-\contentsline {section}{\numberline {6.3}Results}{44}{section.6.3}% 
-\contentsline {chapter}{\numberline {7}Implementation Generalized Robinson Foulds}{45}{chapter.7}% 
-\contentsline {section}{\numberline {7.1}Preparation and Overview}{45}{section.7.1}% 
-\contentsline {section}{\numberline {7.2}Implementation Details}{45}{section.7.2}% 
-\contentsline {section}{\numberline {7.3}Results}{45}{section.7.3}% 
-\contentsline {chapter}{\numberline {8}Conclusion}{46}{chapter.8}% 
-\contentsline {chapter}{\nonumberline Bibliography}{48}{chapter*.19}% 
+\contentsline {section}{\numberline {6.2}Implementation Details}{45}{section.6.2}% 
+\contentsline {section}{\numberline {6.3}Results}{45}{section.6.3}% 
+\contentsline {chapter}{\numberline {7}Implementation Tree Edit Distance}{46}{chapter.7}% 
+\contentsline {section}{\numberline {7.1}Shasha and Zhang's algorithm by Henderson}{46}{section.7.1}% 
+\contentsline {section}{\numberline {7.2}Distance measures}{49}{section.7.2}% 
+\contentsline {section}{\numberline {7.3}Results}{49}{section.7.3}% 
+\contentsline {chapter}{\numberline {8}Conclusion}{50}{chapter.8}% 
+\contentsline {chapter}{\nonumberline Bibliography}{52}{chapter*.19}% 

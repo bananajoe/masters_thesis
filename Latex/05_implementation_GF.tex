@@ -89,7 +89,12 @@ Performing this routine repeatedly allowed us to construct a uniformly randomize
 \end{table}
 
 \subsection{Distance Function}
-
+The generalized Robinson-Foulds allows us to choose different distance measures. But since we have to compare our results with the tree edit distance, we need to choose a distance that counts wrong leaves. Therefore we stick with the introduced Robinson-Jaccard metric. We will compute the distances between trees with different values for the constant $k$. Thus we may see a pattern.
 
 \section{Implementation Details}
+We based our implementations of both the generalized Robinson-Foulds distance and the tree edit distance on the data structure used in an implementation of Shasha and Zhangs algorithm~\cite{Hen} introduced in Section~\ref{sec:saz}. For computing the generalized Robinson-Foulds distance we extended the data structure \textit{Node} of the above mentioned git repository to include the following functions:
+\lstinputlisting[language=Python, caption=Scratch of the class ExtendedNode, label=lst:ExtNode]{figures/extended_node.py}
+
+
+
 \section{Results}

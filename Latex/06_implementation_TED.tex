@@ -1,4 +1,25 @@
-\chapter{Implementation Generalized Robinson Foulds}
-\section{Preparation and Overview}
-\section{Implementation Details}
+\chapter{Implementation Tree Edit Distance}
+In this chapter we present the implementation of Shasha and Zhangs algorithm by Henderson~\cite{Hen}. We discuss meaningful choices of cost functions and compare them with each other. Last but not least we compare the tree edit distance's advantages and disadvantages with respect to the Generalized Robinson Foulds distance. 
+
+\section{Shasha and Zhang's algorithm by Henderson}
+Suppose we want to compute the tree edit distance for two trees $A$ and $B$. Henderson's implementation can be split into two separated important steps:
+\begin{enumerate}
+\item Finding out the post-order traversal index and the keyroots for the two trees under consideration.
+\item Computing the tree edit distances for all combination of subtrees induced by keyroots of $A$ and $B$ respectively.
+\end{enumerate}
+
+\underline{Ad Step $1$}:\\
+In Listing~\ref{lst:AnnTree} we present the initialization of the class AnnotatedTree. It is split up into two parts: Step $1$a) and Step $1$b). We will give a short summary of what happens in these two substeps later on.
+\lstinputlisting[language=Python, caption=Initialization of an AnnotatedTree, label=lst:AnnTree]{figures/annotated_tree.py}
+\underlineAd Step $1$a)}:\\
+This substep initializes a stack $pstack$ that is needed for the second substep. But first we take a close look at the variable called $stack$. Its name already suggests that it is some kind of stack. A stack is a specific data structure. It is a collection of objects that supports fast last-in, first-out semantics. Throughout the process of the loop, the stack always consists of a pair of data, namely a node and a list of all its ancestors. Therefore we initialize the stack with the pair of the annotated tree's root and an empty collection, since the root doesn't have an ancestor. \\
+While the stack still contains some pair of data we perform a function called \textit{pop} on it. This function returns the last element of the stack and removes it from the stack. We associate every node with a unique id $nid$. If the inspected node has some children we enlarge the stack with pairs of each children and the updated list of ancestors. The essential detail is that we \textit{append} this pair to the stack, which means that we put it on the end of the stack. The reason why this is so important will be explained later. After appending all children to the stack, the node will be appended to another stack called $pstack$ which will be used in Step $1$b), together with its node id $nid$ and the list of ancestors.
+Let's go through the process for the first pair of data, namely the root and the empty set of ancestors. We assign the $nid 0$ to the root and go through its children. Here we first append the root's left child, and afterwards its right child. Thus the right child is further in the back of the stack than the left child. Since we only $pop$ the stack, the right child will be out of the stack earlier than the left child. Furthermore, during the next loop we append the stack with other nodes again, pushing the left child of the root further down the stack. In this way we end up with the new stack $pstack$ that has the correct left to right post traversal ordering. The further back a node is in the stack $pstack$, the smaller is its post traversal ordering index.
+
+\underline{Ad Step $1$b)}:\\
+
+\section{Distance measures}
+The most simple distance measure for the tree edit distance just counts the number of operations needed to transform one tree into the other. This implies that any insertion, any deletion and any renaming costs the same value of $1$. \\
+The big difference between the tree edit distance and the generalized Robinson Foulds is that the latter does not take the interior nodes of the trees into account. Yet every insertion and deletion of an interior node increases the tree edit distance. Therefore the first adaption on the operation costs we did was to make the insertion and deletion of interior nodes free of charge. We will later see how this influences the overall comparison between these two distances.
+
 \section{Results}

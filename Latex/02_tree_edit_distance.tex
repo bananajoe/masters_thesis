@@ -73,7 +73,7 @@ The direction $S_A((T_1',T_2'))$ coincides with the direction of branching accor
 \end{defin}
 
 
-\subsection{Shasha and Zhang's algorithm}
+\subsection{Shasha and Zhang's algorithm}\label{sec:saz}
 Shasha and Zhangs algorithm is the most basic dynamic programming approach. They restrict themselves to the decomposition strategy that always chooses the right direction. 
 \begin{lem}\label{lem:sets}
 Let $T_1,T_2$ be two rooted labelled forests and assume these forests are ordered according to the post order indexing. Consider the problem of computing  $\delta(T_1,T_2)$ with a dynamic programming approach $A$ that has a decomposition strategy $S_A(T_1',T_2') = \text{right} \, \forall (T_1',T_2') \in \mathcal{R}_A \setminus \mathcal{T}_A$. Then:\\
