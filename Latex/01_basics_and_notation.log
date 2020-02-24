@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.19 (TeX Live 2018/W32TeX) (preloaded format=pdflatex 2019.4.21)  14 MAY 2019 16:48
+This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019/Debian) (preloaded format=pdflatex 2019.12.5)  24 FEB 2020 16:34
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -2787,7 +2787,7 @@ Your command was ignored.
 Type  I <command> <return>  to replace it with another command,
 or  <return>  to continue without it.
 
-[1{c:/texlive/2018/texmf-var/fonts/map/pdftex/updmap/pdftex.map}]
+[1{/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}]
 
 ! LaTeX Error: Environment algorithm undefined.
 
@@ -4628,10 +4628,10 @@ l.91 ...]{4} \ar@{-}[dl] \ar@{-}[d] \ar@{-}[dr]&&&
                                                   &*+[o][F-]{10} \ar@{-}[dl]...
 (That makes 100 errors; please try again.) 
 Here is how much of TeX's memory you used:
- 21 strings out of 492616
- 376 string characters out of 6132768
- 63402 words of memory out of 5000000
- 4029 multiletter control sequences out of 15000+600000
+ 21 strings out of 492609
+ 376 string characters out of 6131462
+ 63613 words of memory out of 5000000
+ 4038 multiletter control sequences out of 15000+600000
  4294 words of font info for 16 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  18i,7n,14p,486b,139s stack positions out of 5000i,500n,10000p,200000b,80000s

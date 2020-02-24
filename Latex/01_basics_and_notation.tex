@@ -136,10 +136,10 @@ Consider the tree $T$ in Figure~\ref{fig:postorder}. Then we can use the notion 
 	\label{fig:subtrees}
 \end{figure} 
 \end{rem}
-\begin{defin} Let $T_i=(V_i,E_i)$ be an rooted tree. We denote by $t_i:= |V_i|$ the size of the input graph. Furthermore we use the notion of $t_{l,i}$ for the number of leaves in $T_i$ and $t_{h,i}$ for the length of the longest path from the root to any leaf. 
+\begin{defin} Let $T_i=(V_i,E_i)$ be a rooted tree. We call $t_i:= |V_i|$ the size of the tree $T_i$. Furthermore we use the notion of $t_{l,i}$ for the number of leaves in $T_i$ and $t_{h,i}$ for the length of the longest path from the root to any leaf. 
 \end{defin}
 \begin{rem}
-We will need this definitions mainly for stating the running times of algorithms. Since we want to compare $T_1$ with $T_2$ we need to be able to separate those numbers accordingly. Furthermore we will always assume w.l.o.g. $O(t_1)\geq O(t_2)$.
+We will need this definitions mainly for stating the running times of algorithms. Since we want to compare $T_1$ with $T_2$ we need to be able to separate those numbers accordingly. Furthermore, if a tree is significantly bigger, we always assume that tree $T_1$ is the bigger one, i.e. $\mathcal{O}(t_1)\geq \mathcal{O}(t_2)$.
 \end{rem}
 \begin{defin}
 Let $T$ be a forest which is ordered according to the post order indexing. Let $T'$, $T''$ be two induced subforests of $T$ with $\exists i_{T'},j_{T'},i_{T''},j_{T''}$ s.t. $V(T')=\{i_{T'},...,j_{T'}\}$ and $V(T'')=\{i_{T''},...,j_{T''}\}$.\\
@@ -190,7 +190,7 @@ $$\text{ldepth}(T) = \max \{\text{ldepth}(v) \,|\,v \in T\}.$$
 \end{defin}
 \begin{defin}
 Let $T$ be an ordered tree rooted at $r$ and let a heavy path decomposition be given. We define the set TopLight$(T)$ to be the set of all light nodes $v \in V$ with ldepth$(v) = 1$:
-$$\text{TopLight}(T) := \{v \,|\,\text{ldepth}(v)=1 \text{ and } v \text{not in the main heavy path of }T\}.$$
+$$\text{TopLight}(T) := \{v \,|\,\text{ldepth}(v)=1 \text{ and } v \text{ not in the main heavy path of }T\}.$$
 \end{defin}
 \begin{rem}
 A light node $v\in V(T)$ is in TopLight$(T)$ if and only if its parent lies on the main heavy path of $T$.
@@ -201,9 +201,17 @@ A light node $v\in V(T)$ is in TopLight$(T)$ if and only if its parent lies on t
 \end{defin}
 \begin{defin} Let $T$ be a phylogenetic tree and $X$ the set of leaves of $T$. Some $C \subset X$ is called a \textit{clade} if $\exists \,v \in T$ s.t. $C$ is the set of leaves in the induced subtree $T_v$ of $T$. A clade $C$ is called \textit{trivial} if $|C|=1$ or $C = X$. The set $\mathcal{C}(T) := \{C \subset V\;|\; C\text{ is a clade}\}$ is the set of clades of $T$, $\mathcal{C}^*(T) := \{C \in \mathcal{C}(T)\;|\; C\text{ is non trivial}\}$ the set of non trivial clades.
 \end{defin}
-\begin{defin} Let $T$ be a binary tree. $T$ is called \textit{full}, if every inner node has exactly two children.
+\begin{defin} A rooted tree $T$ is called \textit{full binary}, if every node has either $0$ or $2$ children. 
 \end{defin}
+\begin{rem}
 
+\end{rem}
+\begin{figure}[h!]
+	\centering
+    \includegraphics[width=0.6\textwidth]{figures/_full_binaryTrees.png}
+    \captionsetup{singlelinecheck=off}
+    \caption{The illustration suggests, that the node $1$ is the root of the tree. Together with some function $l:\;\{1,..15\} \mapsto \{A,B,C\}$ $T$ is a rooted labelled tree.} 
+\end{figure}
 
 \section{Other necessary Tools}
 \begin{defin}
