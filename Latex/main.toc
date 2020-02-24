@@ -2,35 +2,35 @@
 \contentsline {chapter}{\numberline {1}Introduction}{1}{chapter.1}% 
 \contentsline {chapter}{\numberline {2}Basics and notation}{2}{chapter.2}% 
 \contentsline {section}{\numberline {2.1}Basic Graph Theoretic Concepts}{2}{section.2.1}% 
-\contentsline {section}{\numberline {2.2}Other necessary Tools}{8}{section.2.2}% 
-\contentsline {chapter}{\numberline {3}Tree Edit Distance}{11}{chapter.3}% 
-\contentsline {section}{\numberline {3.1}Introduction}{11}{section.3.1}% 
-\contentsline {section}{\numberline {3.2}Short History of the Tree Edit Distance}{13}{section.3.2}% 
-\contentsline {section}{\numberline {3.3}Dynamic Programming Approach}{14}{section.3.3}% 
-\contentsline {subsection}{\numberline {3.3.1}Shasha and Zhang's algorithm}{15}{subsection.3.3.1}% 
-\contentsline {subsection}{\numberline {3.3.2}Klein's algorithm}{18}{subsection.3.3.2}% 
-\contentsline {subsection}{\numberline {3.3.3}Demaine et al.'s optimal Algorithm}{18}{subsection.3.3.3}% 
-\contentsline {subsection}{\numberline {3.3.4}Lower bound on Decomposition Algorithms}{20}{subsection.3.3.4}% 
-\contentsline {chapter}{\numberline {4}Flexible Tree Matching}{22}{chapter.4}% 
-\contentsline {section}{\numberline {4.1}The Model for the Flexible Tree Edit Distance}{25}{section.4.1}% 
-\contentsline {section}{\numberline {4.2}Approximation and Conclusion}{28}{section.4.2}% 
-\contentsline {chapter}{\numberline {5}Robinson Foulds Metric}{30}{chapter.5}% 
-\contentsline {section}{\numberline {5.1}Additional Background}{30}{section.5.1}% 
-\contentsline {section}{\numberline {5.2}The original metric}{31}{section.5.2}% 
-\contentsline {section}{\numberline {5.3}The Generalized Robinson Foulds}{33}{section.5.3}% 
-\contentsline {subsection}{\numberline {5.3.1}Jaccard-Robinson-Foulds metric}{39}{subsection.5.3.1}% 
-\contentsline {subsection}{\numberline {5.3.2}Computational Complexity}{41}{subsection.5.3.2}% 
-\contentsline {subsection}{\numberline {5.3.3}An Integer Linear Program}{42}{subsection.5.3.3}% 
-\contentsline {chapter}{\numberline {6}Implementation Generalized Robinson Foulds}{44}{chapter.6}% 
-\contentsline {section}{\numberline {6.1}Preparation and Overview}{44}{section.6.1}% 
-\contentsline {subsection}{\numberline {6.1.1}Creating Test Instances}{45}{subsection.6.1.1}% 
-\contentsline {subsection}{\numberline {6.1.2}Distance Function}{49}{subsection.6.1.2}% 
-\contentsline {section}{\numberline {6.2}Implementation Details}{50}{section.6.2}% 
-\contentsline {section}{\numberline {6.3}Results}{51}{section.6.3}% 
-\contentsline {chapter}{\numberline {7}Implementation Tree Edit Distance}{52}{chapter.7}% 
-\contentsline {section}{\numberline {7.1}Shasha and Zhang's algorithm by Henderson}{52}{section.7.1}% 
-\contentsline {section}{\numberline {7.2}Distance measures}{56}{section.7.2}% 
-\contentsline {section}{\numberline {7.3}Results}{57}{section.7.3}% 
-\contentsline {section}{\numberline {7.4}Comparing Results}{58}{section.7.4}% 
-\contentsline {chapter}{\numberline {8}Conclusion}{59}{chapter.8}% 
-\contentsline {chapter}{\nonumberline Bibliography}{61}{chapter*.22}% 
+\contentsline {section}{\numberline {2.2}Other necessary Tools}{9}{section.2.2}% 
+\contentsline {chapter}{\numberline {3}Tree Edit Distance}{13}{chapter.3}% 
+\contentsline {section}{\numberline {3.1}Introduction}{13}{section.3.1}% 
+\contentsline {section}{\numberline {3.2}Short History of the Tree Edit Distance}{15}{section.3.2}% 
+\contentsline {section}{\numberline {3.3}Dynamic Programming Approach}{16}{section.3.3}% 
+\contentsline {subsection}{\numberline {3.3.1}Shasha and Zhang's algorithm}{17}{subsection.3.3.1}% 
+\contentsline {subsection}{\numberline {3.3.2}Klein's algorithm}{20}{subsection.3.3.2}% 
+\contentsline {subsection}{\numberline {3.3.3}Demaine et al.'s optimal Algorithm}{20}{subsection.3.3.3}% 
+\contentsline {subsection}{\numberline {3.3.4}Lower bound on Decomposition Algorithms}{22}{subsection.3.3.4}% 
+\contentsline {chapter}{\numberline {4}Flexible Tree Matching}{24}{chapter.4}% 
+\contentsline {section}{\numberline {4.1}The Model for the Flexible Tree Edit Distance}{27}{section.4.1}% 
+\contentsline {section}{\numberline {4.2}Approximation and Conclusion}{31}{section.4.2}% 
+\contentsline {chapter}{\numberline {5}Robinson Foulds Metric}{32}{chapter.5}% 
+\contentsline {section}{\numberline {5.1}Additional Background}{32}{section.5.1}% 
+\contentsline {section}{\numberline {5.2}The original metric}{33}{section.5.2}% 
+\contentsline {section}{\numberline {5.3}The Generalized Robinson Foulds}{35}{section.5.3}% 
+\contentsline {subsection}{\numberline {5.3.1}Jaccard-Robinson-Foulds metric}{41}{subsection.5.3.1}% 
+\contentsline {subsection}{\numberline {5.3.2}Computational Complexity}{43}{subsection.5.3.2}% 
+\contentsline {subsection}{\numberline {5.3.3}An Integer Linear Program}{44}{subsection.5.3.3}% 
+\contentsline {chapter}{\numberline {6}Implementation Generalized Robinson Foulds}{46}{chapter.6}% 
+\contentsline {section}{\numberline {6.1}Preparation and Overview}{46}{section.6.1}% 
+\contentsline {subsection}{\numberline {6.1.1}Creating Test Instances}{47}{subsection.6.1.1}% 
+\contentsline {subsection}{\numberline {6.1.2}Distance Function}{51}{subsection.6.1.2}% 
+\contentsline {section}{\numberline {6.2}Implementation Details}{52}{section.6.2}% 
+\contentsline {section}{\numberline {6.3}Results}{53}{section.6.3}% 
+\contentsline {chapter}{\numberline {7}Implementation Tree Edit Distance}{54}{chapter.7}% 
+\contentsline {section}{\numberline {7.1}Shasha and Zhang's algorithm by Henderson}{54}{section.7.1}% 
+\contentsline {section}{\numberline {7.2}Distance measures}{58}{section.7.2}% 
+\contentsline {section}{\numberline {7.3}Results}{59}{section.7.3}% 
+\contentsline {section}{\numberline {7.4}Comparing Results}{60}{section.7.4}% 
+\contentsline {chapter}{\numberline {8}Conclusion}{61}{chapter.8}% 
+\contentsline {chapter}{\nonumberline Bibliography}{63}{chapter*.22}% 

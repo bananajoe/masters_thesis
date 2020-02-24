@@ -204,14 +204,29 @@ A light node $v\in V(T)$ is in TopLight$(T)$ if and only if its parent lies on t
 \begin{defin} A rooted tree $T$ is called \textit{full binary}, if every node has either $0$ or $2$ children. 
 \end{defin}
 \begin{rem}
-
-\end{rem}
+In some literature, a binary tree is defined as a tree, where every node has $\leq 2$ children. This contains the possibility of nodes having exactly $1$ child. In the context where we will use binary trees, this kind of behavior is not desired. Therefore we ensure all nodes to either be a leaf or have exactly $2$ children. This results in trees with a nice property: 
+\begin{lem}
+Let a full binary tree $T$ with $n$ leaves be given. Then $T$ has $2n-1$ nodes over all.
+\end{lem}
+\begin{proof}
+We make an inductive argument. For $n \, \in \, \{0,1,2\}$ this is a trivial statement. Assume the statement holds $\forall \, m \leq n$.\\
+$n \to  n+1$: Let $l$ be the left child and $r$ the right child of $T$'s root. Since $T$ is a full binary tree, $T_l$ and $T_r$ also have to be full binary trees. We define $m_l$ to be the number of leaves in $T_l$ and $m_r$ the number of leaves in $T_r$. 
+\begin{align*}
+\Rightarrow \, m_l + m_r &= n \\
+\Rightarrow \, |V(T_l)| &= 2m_l -1, \; |V(T_r)| = 2m_r - 1\\
+\Rightarrow \, |V(T)| &= |V(T_l)| + |V(T_r)| + 1  \\
+ \, &= (2m_l -1) + (2m_r -1) +1 \\
+ \, &= 2(m_l+m_r)-1 = 2n-1 
+\end{align*}
+\end{proof} 
+So when we compare two full binary trees with the same number of leaves, we know that these trees have exactly the same number of leaves. 
 \begin{figure}[h!]
 	\centering
     \includegraphics[width=0.6\textwidth]{figures/_full_binaryTrees.png}
     \captionsetup{singlelinecheck=off}
-    \caption{The illustration suggests, that the node $1$ is the root of the tree. Together with some function $l:\;\{1,..15\} \mapsto \{A,B,C\}$ $T$ is a rooted labelled tree.} 
+    \caption{An illustration of two binary trees. In both trees all nodes have $\leq 2$ children. However, only $T_1$ is a full binary tree because no node has exactly $1$ child.} 
 \end{figure}
+\end{rem}
 
 \section{Other necessary Tools}
 \begin{defin}
@@ -284,16 +299,33 @@ Let $T=(V,E)$ be a rooted labelled tree. A function $d: V\times V \mapsto \mathc
 \end{defin}
 
 \begin{defin}
-The \textit{Catalan numbers} $(C_n)_{n \in \mathbb{Z}_{\geq 0}}$ forms a sequence of natural numbers which occur in many recursively defined combinatorial problems. They are recursively defined as follows:
+The \textit{Catalan numbers} $(C_n)_{n \in \mathbb{Z}_{\geq 0}}$ forms a sequence of natural numbers which occurs in many counting problems. They are recursively defined as follows:
 \begin{align*}
-C_0 &= 1
-C_n &= \sum_i^{n-1} \; C_i C_{n-i-1} \text{ for } n \geq 1 
+C_0 &= 1 \\
+C_n &= \sum_{i=0}^{n-1} \; C_i C_{n-i-1} \text{ for } n \geq 1 
 \end{align*}
 \end{defin}
 \begin{rem}
-The following two combinatorial problems are examples in which the Catalan numbers occur:
+The following two counting problems are examples in which the Catalan numbers occur:
 \begin{itemize}
-\item Counting the number of expressions containing $n$ pairs of parentheses where any prefix of the expression contains at least as many opening parentheses "(" as closing ones ")".
-\item Counting the number of full binary trees with $n+1$ leaves.
+\item Counting the number of pairwise different expressions containing $n$ pairs of parentheses where any prefix of the expression contains at least as many opening parentheses "(" as closing ones ")".~\cite{Ste}
+\item Counting the number of pairwise different full binary trees with $n+1$ leaves. 
 \end{itemize}
 \end{rem}
+\begin{lem}\label{lem:binCat}
+The number of pairwise different full binary trees with $n+1$ leaves is exactly the $n$th-Catalan number $C_n$.
+\end{lem}
+\begin{proof}
+We prove this statement via an induction. For $n=0$ the statement is trivial. There is only $1$ tree with exactly $1$ leaf, which is a single node.\\
+Before performing the induction step, we introduce a notation. Let $k,l \, \in \, \mathcal{Z}_{> 0}$, then we introduce the following function:
+$$C(k,l) := \bigg| \bigg\{T\, \Big| \, \parbox[position]{0.6\textwidth}{$T$ is a full binary tree where the left subtree has $k$ leaves and the right one has $l$}\bigg\}\bigg|$$ 
+For the induction step assume that the inductive statement holds true for all $m < n$. Let's count the number of trees with $n+1$ leaves. Let an integer $i \, \in \mathbb{Z}_{\geq 0}$, $i < n+1$ be given. The number of pairwise different full binary trees with $n+1$ leaves, where the left subtree has $i$ leaves is $C(i, n+1-i)$. Because of the induction step we can determine this number:
+$$C(i,n+1-i)= C_{i-1}C_{n+1-i-1}$$
+If we sum up all $C(i,n+1-i)$ over all possible $i$, then he get the number of all pairwise different full binary trees with $n+1$ leaves:
+\begin{align*}
+&|\{\text{full binary trees with $n+1$ leaves}\}| \\
+&= \sum_{i=1}^{n} C(i, n+1-i) \\
+&= \sum_{i=1}^{n} C_{i-1}C_{n-(i-1)-1} \\
+&= \sum_{i=0}^{n-1} C_{i}C_{n-i-1} = C_n
+\end{align*}
+\end{proof}

@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019/Debian) (preloaded format=pdflatex 2019.12.5)  24 FEB 2020 16:34
+This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019/Debian) (preloaded format=pdflatex 2019.12.5)  24 FEB 2020 20:21
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1549,105 +1549,108 @@ g\OT1/pplx/m/n/12 .
  []
 
 [7 <./figures/heavy_nodes.jpg> <./figures/heavy_path_decomposition.jpg>]
-<figures/_full_binaryTrees.png, id=221, 3260.5815pt x 2098.9617pt>
+Package hyperref Info: bookmark level for unknown lem defaults to 0 on input li
+ne 209.
+<figures/_full_binaryTrees.png, id=221, 2343.50531pt x 807.7678pt>
 File: figures/_full_binaryTrees.png Graphic file (type png)
 <use figures/_full_binaryTrees.png>
-Package pdftex.def Info: figures/_full_binaryTrees.png  used on input line 211.
+Package pdftex.def Info: figures/_full_binaryTrees.png  used on input line 225.
 
-(pdftex.def)             Requested size: 239.0056pt x 153.82825pt.
+(pdftex.def)             Requested size: 239.0056pt x 82.37149pt.
 
-[8 <./figures/_full_binaryTrees.png>]
-<figures/TreeEditOperation_1.png, id=235, 560.8453pt x 590.95781pt>
+
+LaTeX Warning: `!h' float specifier changed to `!ht'.
+
+[8]
+<figures/TreeEditOperation_1.png, id=231, 560.8453pt x 590.95781pt>
 File: figures/TreeEditOperation_1.png Graphic file (type png)
 <use figures/TreeEditOperation_1.png>
-Package pdftex.def Info: figures/TreeEditOperation_1.png  used on input line 23
-2.
+Package pdftex.def Info: figures/TreeEditOperation_1.png  used on input line 24
+7.
 (pdftex.def)             Requested size: 71.69803pt x 75.54675pt.
-<figures/TreeEditOperation_1,5.png, id=236, 355.3275pt x 374.90062pt>
+<figures/TreeEditOperation_1,5.png, id=232, 355.3275pt x 374.90062pt>
 File: figures/TreeEditOperation_1,5.png Graphic file (type png)
 <use figures/TreeEditOperation_1,5.png>
 Package pdftex.def Info: figures/TreeEditOperation_1,5.png  used on input line 
-236.
+251.
 (pdftex.def)             Requested size: 71.69803pt x 75.64809pt.
-<figures/TreeEditOperation_2.png, id=237, 560.8453pt x 590.95781pt>
+<figures/TreeEditOperation_2.png, id=233, 560.8453pt x 590.95781pt>
 File: figures/TreeEditOperation_2.png Graphic file (type png)
 <use figures/TreeEditOperation_2.png>
-Package pdftex.def Info: figures/TreeEditOperation_2.png  used on input line 24
-0.
+Package pdftex.def Info: figures/TreeEditOperation_2.png  used on input line 25
+5.
 (pdftex.def)             Requested size: 71.69803pt x 75.54675pt.
-<figures/TreeEditOperation_2,5.png, id=238, 358.33875pt x 376.40625pt>
+<figures/TreeEditOperation_2,5.png, id=234, 358.33875pt x 376.40625pt>
 File: figures/TreeEditOperation_2,5.png Graphic file (type png)
 <use figures/TreeEditOperation_2,5.png>
 Package pdftex.def Info: figures/TreeEditOperation_2,5.png  used on input line 
-244.
+259.
 (pdftex.def)             Requested size: 71.69803pt x 75.30862pt.
-<figures/TreeEditOperation_3.png, id=239, 560.8453pt x 590.95781pt>
+<figures/TreeEditOperation_3.png, id=235, 560.8453pt x 590.95781pt>
 File: figures/TreeEditOperation_3.png Graphic file (type png)
 <use figures/TreeEditOperation_3.png>
-Package pdftex.def Info: figures/TreeEditOperation_3.png  used on input line 24
-8.
+Package pdftex.def Info: figures/TreeEditOperation_3.png  used on input line 26
+3.
 (pdftex.def)             Requested size: 71.69803pt x 75.54675pt.
-
-Underfull \vbox (badness 1057) has occurred while \output is active []
-
- [9 <./figures/TreeEditOperation_1.png> <./figures/TreeEditOperation_1,5.png> <
-./figures/TreeEditOperation_2.png> <./figures/TreeEditOperation_2,5.png> <./fig
-ures/TreeEditOperation_3.png>]
-LaTeX Font Info:    Try loading font information for U+fplmbb on input line 287
+ [9 <./figures/_full_binaryTrees.png>]
+LaTeX Font Info:    Try loading font information for U+fplmbb on input line 302
 .
- (/usr/share/texlive/texmf-dist/tex/latex/psnfss/ufplmbb.fd
+
+(/usr/share/texlive/texmf-dist/tex/latex/psnfss/ufplmbb.fd
 File: ufplmbb.fd 2003/10/30 Fontinst v1.914 font definitions for U/fplmbb.
-)
-LaTeX Font Info:    Try loading font information for OMS+pplj on input line 296
+) [10 <./figures/TreeEditOperation_1.png> <./figures/TreeEditOperation_1,5.png>
+ <./figures/TreeEditOperation_2.png> <./figures/TreeEditOperation_2,5.png> <./f
+igures/TreeEditOperation_3.png>]
+LaTeX Font Info:    Try loading font information for OMS+pplj on input line 311
 .
-LaTeX Font Info:    No file OMSpplj.fd. on input line 296.
+LaTeX Font Info:    No file OMSpplj.fd. on input line 311.
 
 
 LaTeX Font Warning: Font shape `OMS/pplj/m/n' undefined
 (Font)              using `OMS/cmsy/m/n' instead
-(Font)              for symbol `textbullet' on input line 296.
+(Font)              for symbol `textbullet' on input line 311.
 
-) (./02_tree_edit_distance.tex [10]
+[11]) (./02_tree_edit_distance.tex [12]
 chapter 3.
 
 Package caption Warning: \label without proper reference on input line 39.
 See the caption package documentation for explanation.
 
 
-LaTeX Warning: Reference `fig:TEE' on page 11 undefined on input line 19.
+LaTeX Warning: Reference `fig:TEE' on page 13 undefined on input line 19.
 
-<figures/TreeEditExample_1.jpg, id=276, 560.8453pt x 534.49687pt>
+<figures/TreeEditExample_1.jpg, id=290, 560.8453pt x 534.49687pt>
 File: figures/TreeEditExample_1.jpg Graphic file (type jpg)
 <use figures/TreeEditExample_1.jpg>
 Package pdftex.def Info: figures/TreeEditExample_1.jpg  used on input line 23.
 (pdftex.def)             Requested size: 155.3518pt x 148.0514pt.
-<figures/TreeEditExample_1,5.jpg, id=277, 309.40594pt x 534.49687pt>
+<figures/TreeEditExample_1,5.jpg, id=291, 309.40594pt x 534.49687pt>
 File: figures/TreeEditExample_1,5.jpg Graphic file (type jpg)
 <use figures/TreeEditExample_1,5.jpg>
 Package pdftex.def Info: figures/TreeEditExample_1,5.jpg  used on input line 24
 .
 (pdftex.def)             Requested size: 79.6665pt x 137.62021pt.
-<figures/TreeEditExample_2.jpg, id=278, 560.8453pt x 534.49687pt>
+<figures/TreeEditExample_2.jpg, id=292, 560.8453pt x 534.49687pt>
 File: figures/TreeEditExample_2.jpg Graphic file (type jpg)
 <use figures/TreeEditExample_2.jpg>
 Package pdftex.def Info: figures/TreeEditExample_2.jpg  used on input line 25.
 (pdftex.def)             Requested size: 155.3518pt x 148.0514pt.
-<figures/TreeEditExample_3.jpg, id=279, 922.19531pt x 489.32813pt>
+<figures/TreeEditExample_3.jpg, id=293, 922.19531pt x 489.32813pt>
 File: figures/TreeEditExample_3.jpg Graphic file (type jpg)
 <use figures/TreeEditExample_3.jpg>
 Package pdftex.def Info: figures/TreeEditExample_3.jpg  used on input line 29.
 (pdftex.def)             Requested size: 179.25116pt x 95.10873pt.
-<figures/TreeEditExample_4.jpg, id=280, 922.19531pt x 489.32813pt>
+<figures/TreeEditExample_4.jpg, id=294, 922.19531pt x 489.32813pt>
 File: figures/TreeEditExample_4.jpg Graphic file (type jpg)
 <use figures/TreeEditExample_4.jpg>
 Package pdftex.def Info: figures/TreeEditExample_4.jpg  used on input line 31.
 (pdftex.def)             Requested size: 179.25116pt x 95.10873pt.
-<figures/TreeEditExample_5.jpg, id=281, 922.19531pt x 489.32813pt>
+<figures/TreeEditExample_5.jpg, id=295, 922.19531pt x 489.32813pt>
 File: figures/TreeEditExample_5.jpg Graphic file (type jpg)
 <use figures/TreeEditExample_5.jpg>
 Package pdftex.def Info: figures/TreeEditExample_5.jpg  used on input line 34.
 (pdftex.def)             Requested size: 179.25116pt x 95.10873pt.
-<figures/TreeEditExample_6.jpg, id=282, 922.19531pt x 489.32813pt>
+<figures/TreeEditExample_6.jpg, id=296, 922.19531pt x 489.32813pt>
 File: figures/TreeEditExample_6.jpg Graphic file (type jpg)
 <use figures/TreeEditExample_6.jpg>
 Package pdftex.def Info: figures/TreeEditExample_6.jpg  used on input line 36.
@@ -1657,24 +1660,21 @@ Underfull \hbox (badness 10000) in paragraph at lines 29--37
 
  []
 
-[11
+[13
 
-] [12 <./figures/TreeEditExample_1.JPG> <./figures/TreeEditExample_1,5.JPG> <./
+] [14 <./figures/TreeEditExample_1.JPG> <./figures/TreeEditExample_1,5.JPG> <./
 figures/TreeEditExample_2.JPG> <./figures/TreeEditExample_3.JPG> <./figures/Tre
 eEditExample_4.JPG> <./figures/TreeEditExample_5.JPG> <./figures/TreeEditExampl
 e_6.JPG>]
 Underfull \vbox (badness 1303) has occurred while \output is active []
 
- [13]
-[14]
-Package hyperref Info: bookmark level for unknown lem defaults to 0 on input li
-ne 78.
-
+ [15]
+[16]
 Underfull \hbox (badness 10000) in paragraph at lines 79--81
 
  []
 
-[15] [16] [17]
+[17] [18] [19]
 Overfull \hbox (118.87994pt too wide) in paragraph at lines 126--128
 \OT1/pplj/m/n/12 (-20) Combining all the parts to-gether we reach tar-get run-n
 ing time of $\OML/zplm/m/it/12 O\OT1/zplm/m/n/12 ([]\OMS/zplm/m/n/12 f\OML/zplm
@@ -1688,7 +1688,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 133--134
 
  []
 
-[18]
+[20]
 Underfull \hbox (badness 10000) in paragraph at lines 146--147
 
  []
@@ -1699,7 +1699,7 @@ Overfull \hbox (19.29817pt too wide) detected at line 151
 \OML/zplm/m/it/12 T[]\OT1/zplm/m/n/12 ) = []
  []
 
-<figures/optimal_algorithm.jpg, id=373, 568.37344pt x 216.81pt>
+<figures/optimal_algorithm.jpg, id=387, 568.37344pt x 216.81pt>
 File: figures/optimal_algorithm.jpg Graphic file (type jpg)
 <use figures/optimal_algorithm.jpg>
 Package pdftex.def Info: figures/optimal_algorithm.jpg  used on input line 154.
@@ -1710,29 +1710,29 @@ Package caption Warning: \label without proper reference on input line 153.
 See the caption package documentation for explanation.
 
 
-LaTeX Warning: Reference `fig:S_D' on page 19 undefined on input line 158.
+LaTeX Warning: Reference `fig:S_D' on page 21 undefined on input line 158.
 
-[19 <./figures/optimal_algorithm.jpg>]
+[21 <./figures/optimal_algorithm.jpg>]
 Package hyperref Info: bookmark level for unknown thm defaults to 0 on input li
 ne 167.
-<figures/O(m^2n).JPG, id=385, 1343.0175pt x 498.36188pt>
+<figures/O(m^2n).JPG, id=400, 1343.0175pt x 498.36188pt>
 File: figures/O(m^2n).JPG Graphic file (type jpg)
 <use figures/O(m^2n).JPG>
 Package pdftex.def Info: figures/O(m^2n).JPG  used on input line 184.
 (pdftex.def)             Requested size: 191.68938pt x 71.13188pt.
- [20 <./figures/O(m^2n).JPG>]
+ [22 <./figures/O(m^2n).JPG>]
 
 LaTeX Warning: No positions in optional float specifier.
                Default added (so using `tbp') on input line 196.
 
-<figures/O(m^2nlogn_m).JPG, id=400, 1087.06125pt x 359.09157pt>
+<figures/O(m^2nlogn_m).JPG, id=415, 1087.06125pt x 359.09157pt>
 File: figures/O(m^2nlogn_m).JPG Graphic file (type jpg)
 <use figures/O(m^2nlogn_m).JPG>
 Package pdftex.def Info: figures/O(m^2nlogn_m).JPG  used on input line 198.
 (pdftex.def)             Requested size: 215.33499pt x 71.13188pt.
-) (./03_flexible_tree_matching.tex [21 <./figures/O(m^2nlogn_m).JPG>]
+) (./03_flexible_tree_matching.tex [23 <./figures/O(m^2nlogn_m).JPG>]
 chapter 4.
-<figures/DOM_website.png, id=409, 572.1375pt x 310.15875pt>
+<figures/DOM_website.png, id=423, 572.1375pt x 310.15875pt>
 File: figures/DOM_website.png Graphic file (type png)
 <use figures/DOM_website.png>
 Package pdftex.def Info: figures/DOM_website.png  used on input line 5.
@@ -1750,15 +1750,15 @@ Package microtype Info: Loading generic protrusion settings for font family
 (microtype)             For optimal results, create family-specific settings.
 (microtype)             See the microtype manual for details.
 
-(./figures/DOM_0.html [22
+(./figures/DOM_0.html [24
 
  <./figures/DOM_website.png>])
-<figures/DOM_0.jpg, id=425, 754.31813pt x 424.58624pt>
+<figures/DOM_0.jpg, id=439, 754.31813pt x 424.58624pt>
 File: figures/DOM_0.jpg Graphic file (type jpg)
 <use figures/DOM_0.jpg>
 Package pdftex.def Info: figures/DOM_0.jpg  used on input line 14.
 (pdftex.def)             Requested size: 398.33862pt x 224.21332pt.
-<figures/DOM_website_1.png, id=427, 572.1375pt x 352.31625pt>
+<figures/DOM_website_1.png, id=441, 572.1375pt x 352.31625pt>
 File: figures/DOM_website_1.png Graphic file (type png)
 <use figures/DOM_website_1.png>
 Package pdftex.def Info: figures/DOM_website_1.png  used on input line 22.
@@ -1767,55 +1767,60 @@ Package pdftex.def Info: figures/DOM_website_1.png  used on input line 22.
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
-[23]
+[25]
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
-[24 <./figures/DOM_0.jpg>] [25 <./figures/DOM_website_1.png>]
-<figures/Treeconcepts_flexible_tree_matching.png, id=474, 866.48718pt x 280.046
+[26 <./figures/DOM_0.jpg>]
+Underfull \hbox (badness 10000) in paragraph at lines 33--34
+
+ []
+
+[27 <./figures/DOM_website_1.png>] [28]
+<figures/Treeconcepts_flexible_tree_matching.png, id=502, 866.48718pt x 280.046
 25pt>
 File: figures/Treeconcepts_flexible_tree_matching.png Graphic file (type png)
 <use figures/Treeconcepts_flexible_tree_matching.png>
 Package pdftex.def Info: figures/Treeconcepts_flexible_tree_matching.png  used 
-on input line 40.
+on input line 69.
 (pdftex.def)             Requested size: 398.33862pt x 128.74164pt.
 
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
- [26]
+ [29 <./figures/Treeconcepts_flexible_tree_matching.png>]) (./04_robinson_fould
+s.tex
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
- [27 <./figures/Treeconcepts_flexible_tree_matching.png>]) (./04_robinson_fould
-s.tex
-[28] [29]
+ [30]
+[31]
 chapter 5.
 
 Underfull \hbox (badness 10000) in paragraph at lines 2--3
 
  []
 
-<figures/multifurcation.png, id=497, 1515.41156pt x 961.34157pt>
+<figures/multifurcation.png, id=530, 1515.41156pt x 961.34157pt>
 File: figures/multifurcation.png Graphic file (type png)
 <use figures/multifurcation.png>
 Package pdftex.def Info: figures/multifurcation.png  used on input line 9.
 (pdftex.def)             Requested size: 159.33301pt x 101.06853pt.
-[30
+[32
 
-] [31 <./figures/multifurcation.png>]
+] [33 <./figures/multifurcation.png>]
 
 Package caption Warning: \label without proper reference on input line 37.
 See the caption package documentation for explanation.
 
 
-LaTeX Warning: Reference `fig:maxRFdist' on page 32 undefined on input line 25.
+LaTeX Warning: Reference `fig:maxRFdist' on page 34 undefined on input line 25.
 
 
-<figures/RF_tree1.jpg, id=512, 949.29657pt x 428.35031pt>
+<figures/RF_tree1.jpg, id=546, 949.29657pt x 428.35031pt>
 File: figures/RF_tree1.jpg Graphic file (type jpg)
 <use figures/RF_tree1.jpg>
 Package pdftex.def Info: figures/RF_tree1.jpg  used on input line 39.
 (pdftex.def)             Requested size: 179.25116pt x 80.88412pt.
-<figures/RF_tree2.jpg, id=513, 961.34157pt x 431.36156pt>
+<figures/RF_tree2.jpg, id=547, 961.34157pt x 431.36156pt>
 File: figures/RF_tree2.jpg Graphic file (type jpg)
 <use figures/RF_tree2.jpg>
 Package pdftex.def Info: figures/RF_tree2.jpg  used on input line 43.
@@ -1832,8 +1837,8 @@ Underfull \hbox (badness 10000) in paragraph at lines 38--49
 
 Underfull \vbox (badness 1092) has occurred while \output is active []
 
- [32]
-[33 <./figures/RF_tree1.JPG> <./figures/RF_tree2.JPG>]
+ [34]
+[35 <./figures/RF_tree1.JPG> <./figures/RF_tree2.JPG>]
 Overfull \hbox (8.00818pt too wide) detected at line 67
 \OML/zplm/m/it/12 d[]\OT1/zplm/m/n/12 (\OML/zplm/m/it/12 M\OT1/zplm/m/n/12 ) :=
  []  \OML/zplm/m/it/12 ^^N\OT1/zplm/m/n/12 (\OML/zplm/m/it/12 C\OT1/pplx/m/n/12
@@ -1843,21 +1848,21 @@ m/n/12 (\OML/zplm/m/it/12 C\OT1/pplx/m/n/12 , \OMS/zplm/m/n/12 ;\OT1/zplm/m/n/1
 /12 , \OML/zplm/m/it/12 C[]\OT1/zplm/m/n/12 )
  []
 
-[34]
+[36]
 Overfull \hbox (34.21672pt too wide) detected at line 105
 []
  []
 
 
-LaTeX Warning: Reference `fig:preRFdist' on page 35 undefined on input line 108
+LaTeX Warning: Reference `fig:preRFdist' on page 37 undefined on input line 108
 .
 
-[35]
+[37]
 
-LaTeX Warning: Reference `fig:maxCostMatch' on page 36 undefined on input line 
+LaTeX Warning: Reference `fig:maxCostMatch' on page 38 undefined on input line 
 114.
 
-<figures/maxCostMatching.png, id=553, 1303.269pt x 839.0547pt>
+<figures/maxCostMatching.png, id=587, 1303.269pt x 839.0547pt>
 File: figures/maxCostMatching.png Graphic file (type png)
 <use figures/maxCostMatching.png>
 Package pdftex.def Info: figures/maxCostMatching.png  used on input line 117.
@@ -1867,12 +1872,12 @@ Overfull \hbox (99.58466pt too wide) in paragraph at lines 117--118
  [][] 
  []
 
-[36] [37 <./figures/maxCostMatching.png>] [38]
+[38] [39 <./figures/maxCostMatching.png>] [40]
 Underfull \hbox (badness 10000) in paragraph at lines 183--184
 
  []
 
-[39]
+[41]
 Underfull \hbox (badness 10000) in paragraph at lines 196--197
 
  []
@@ -1882,7 +1887,7 @@ Overfull \hbox (2.81369pt too wide) detected at line 219
 []
  []
 
-[40] [41]
+[42] [43]
 Overfull \hbox (1.46791pt too wide) detected at line 237
 \OMS/zplm/m/n/12 I \OT1/zplm/m/n/12 := []\OMS/zplm/m/n/12 f\OT1/zplm/m/n/12 (\O
 ML/zplm/m/it/12 i\OT1/pplx/m/n/12 , \OML/zplm/m/it/12 j\OT1/zplm/m/n/12 )\OT1/p
@@ -1890,30 +1895,30 @@ plx/m/n/12 , \OT1/zplm/m/n/12 (\OML/zplm/m/it/12 k\OT1/pplx/m/n/12 , \OML/zplm/
 m/it/12 l\OT1/zplm/m/n/12 )\OMS/zplm/m/n/12 g [] [][]
  []
 
-[42]) (./05_implementation_GF.tex [43]
+[44]) (./05_implementation_GF.tex [45]
 chapter 6.
-[44
+[46
 
-] [45]
+] [47]
 Overfull \hbox (8.83879pt too wide) detected at line 66
 \OML/zplm/m/it/12 P \OT1/zplm/m/n/12 = [] \OML/zplm/m/it/12 p[] \OT1/zplm/m/n/1
 2 = [] [] = [] = [] = \OT1/pplx/m/n/12 1
  []
 
-[46] [47] [48]
-<figures/python_tree_example_1.png, id=662, 2454.92157pt x 1491.32156pt>
+[48] [49] [50]
+<figures/python_tree_example_1.png, id=696, 2454.92157pt x 1491.32156pt>
 File: figures/python_tree_example_1.png Graphic file (type png)
 <use figures/python_tree_example_1.png>
 Package pdftex.def Info: figures/python_tree_example_1.png  used on input line 
 79.
 (pdftex.def)             Requested size: 159.33301pt x 96.78001pt.
-<figures/python_tree_example_2.png, id=663, 2087.54906pt x 1069.74657pt>
+<figures/python_tree_example_2.png, id=697, 2087.54906pt x 1069.74657pt>
 File: figures/python_tree_example_2.png Graphic file (type png)
 <use figures/python_tree_example_2.png>
 Package pdftex.def Info: figures/python_tree_example_2.png  used on input line 
 82.
 (pdftex.def)             Requested size: 159.33301pt x 81.64763pt.
-<figures/python_tree_example_3.png, id=664, 2102.60532pt x 1247.41031pt>
+<figures/python_tree_example_3.png, id=698, 2102.60532pt x 1247.41031pt>
 File: figures/python_tree_example_3.png Graphic file (type png)
 <use figures/python_tree_example_3.png>
 Package pdftex.def Info: figures/python_tree_example_3.png  used on input line 
@@ -1926,24 +1931,24 @@ Overfull \hbox (48.13672pt too wide) in paragraph at lines 76--89
 
 (/usr/share/texlive/texmf-dist/tex/latex/listings/lstlang1.sty
 File: lstlang1.sty 2019/02/27 1.8b listings language file
-) [49 <./figures/python_tree_example_1.png> <./figures/python_tree_example_2.pn
-g> <./figures/python_tree_example_3.png>] (./figures/extended_node.py) [50])
-(./06_implementation_TED.tex [51]
+) [51 <./figures/python_tree_example_1.png> <./figures/python_tree_example_2.pn
+g> <./figures/python_tree_example_3.png>] (./figures/extended_node.py) [52])
+(./06_implementation_TED.tex [53]
 chapter 7.
-(./figures/annotated_tree.py [52
+(./figures/annotated_tree.py [54
 
 ])
 Underfull \vbox (badness 3735) has occurred while \output is active []
 
- [53]
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
- [54]
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
  [55]
-[56]
-<figures/CTED.png, id=776, 420.8523pt x 110.814pt>
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [56]
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [57]
+[58]
+<figures/CTED.png, id=811, 420.8523pt x 110.814pt>
 File: figures/CTED.png Graphic file (type png)
 <use figures/CTED.png>
 Package pdftex.def Info: figures/CTED.png  used on input line 47.
@@ -1952,15 +1957,15 @@ Package pdftex.def Info: figures/CTED.png  used on input line 47.
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
-) (./07_conclusion.tex [57] [58 <./figures/CTED.png>]
+) (./07_conclusion.tex [59] [60 <./figures/CTED.png>]
 chapter 8.
-[59
-
-]) (./references.tex [60]
-chapter without number
 [61
 
-]) [62]
+]) (./references.tex [62]
+chapter without number
+[63
+
+]) [64]
 Package atveryend Info: Empty hook `BeforeClearDocument' on input line 157.
 Package atveryend Info: Empty hook `AfterLastShipout' on input line 157.
  (./main.aux)
@@ -1981,10 +1986,10 @@ LaTeX Warning: There were multiply-defined labels.
 Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 157.
  ) 
 Here is how much of TeX's memory you used:
- 35092 strings out of 492609
- 618792 string characters out of 6131462
- 1241341 words of memory out of 5000000
- 37307 multiletter control sequences out of 15000+600000
+ 35126 strings out of 492609
+ 619266 string characters out of 6131462
+ 1241827 words of memory out of 5000000
+ 37318 multiletter control sequences out of 15000+600000
  87354 words of font info for 526 fonts, out of 8000000 for 9000
  1143 hyphenation exceptions out of 8191
  75i,28n,100p,9136b,2510s stack positions out of 5000i,500n,10000p,200000b,80000s
@@ -2004,10 +2009,10 @@ ist/fonts/type1/public/fpl/fplrc8a.pfb></usr/share/texlive/texmf-dist/fonts/typ
 e1/public/fpl/fplrij8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/palat
 ino/uplb8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/palatino/uplr8a.p
 fb></usr/share/texlive/texmf-dist/fonts/type1/urw/palatino/uplri8a.pfb>
-Output written on main.pdf (66 pages, 2767467 bytes).
+Output written on main.pdf (68 pages, 2213192 bytes).
 PDF statistics:
- 1063 PDF objects out of 1200 (max. 8388607)
- 897 compressed objects within 9 object streams
- 396 named destinations out of 1000 (max. 500000)
+ 1103 PDF objects out of 1200 (max. 8388607)
+ 934 compressed objects within 10 object streams
+ 419 named destinations out of 1000 (max. 500000)
  45093 words of extra memory for PDF output out of 51595 (max. 10000000)
 
