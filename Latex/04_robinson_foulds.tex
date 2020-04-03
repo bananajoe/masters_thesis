@@ -25,7 +25,7 @@ The Robinson-Foulds metric is quite intuitive and easy to compute. It is the ave
 Let $T_1,T_2$ be two trees with the same set of taxa $X$. Then we define the Robinson-Foulds metric $d_{RF}$ as follows:
 \[ d_{RF} := \frac{1}{2}|\mathcal{C}^*(T_1) \bigtriangleup \mathcal{C}^*(T_2)| \]
 \end{defin}
-\begin{rem}
+\begin{rem}~\label{rem:n-2clades}
 Assuming that two trees $T_1$,$T_2$ have the same set of taxa $X$ with $n:= |X|$ implies that the number of interior nodes is bounded by $n-1$ for both trees. Furthermore, since we ignore trivial clades, the clade $X$, induced by the tree's root, will be ignored. Thus we end up with a maximum RF-distance of $n-2$ for two trees with the same taxa sets of size $n$.
 \end{rem}
 Although the Robinson-Foulds metric is commonly used, it has some well known downsides. For example changing the position of a single leaf can yield a new tree having maximal distance from the original one. Let's take a look at Figure~\ref{fig:maxRFdist}. Let $T_1$ be the top left tree and $T_2$ be the top right one. It is easy to see that the set of clades are the following:
@@ -238,24 +238,135 @@ One way to approach an $\mathcal{NP}$-complete problem is to formulate it as an 
 Let two rooted phylogenetic trees $T_1 = (V_1,E_1)$ and $T_2 = (V_2,E_2)$ and a cost function $\delta: \mathcal{C}(T_1 \times \mathcal{C}(T_2) \mapsto \mathbb{R}_{\geq 0}$ be given. We number the clades in $\mathcal{C}(T_i)$ from $1$ to $|V_i|$ for $i \in \{1,2\}$. Then the indicator variable $x_{i,j}$ represents whether the $i$-th clade $C_i$ in $\mathcal{C}(T_1)$ is matched with the $j$-th clade $C'_j$ in $\mathcal{C}(T_2)$. We use the cost function introduced in Equation~(\ref{eq:costfct}) to find a minimum cost matching while maximizing the sum of the cost function. To recapitulate, the value for $\omega(C_i,C'_j)$ is:
 $$\omega(C_i,C'_j) = \delta(C_i,\emptyset) + \delta(\emptyset, C'_j) - \delta(C_i,C'_j)$$
 We also have to make sure that the assignment we receive satisfies the conditions for an arboreal matching. Therefore we introduce the set $\mathcal{I}$ with the following properties:
-\begin{equation*}
+\begin{equation}\label{eq:setI}
 \mathcal{I} := \bigg\{ \{(i,j), (k,l)\} \, \Big| \, \parbox{9.8cm}{The edges $(C_i, C'_j)$ and $(C_k, C'_l)$ violate the conditions
 \\for arboreal matchings defined in Definition~\ref{def:arboreal}} \bigg\}
-\end{equation*}
+\end{equation}
 \begin{thm}\label{thm:gRF_LP}
-Let $T_1$ and $T_2$, two rooted phylogenetic trees on the same set of taxa $X$, and a cost function $\delta$ be given. Furthermore let a fixed order of all non-trivial clades in $\mathcal{C}(T_1)$ and $\mathcal{C}(T_2)$ and the cost function $\omega(C_i,C_j')$ be given. We introduce a linear integer problem with decision variables $x_{i,j}$ as follows.
+Let $T_1$ and $T_2$, two rooted phylogenetic trees on the same set of taxa $X$ with $|X|=:n$, and a cost function $\delta$ be given. Furthermore let a fixed order of all non-trivial clades in $\mathcal{C}(T_1)$ and $\mathcal{C}(T_2)$ and the cost function $\omega(C_i,C_j')$ be given. We introduce an integer linear problem (ILP) with decision variables $x_{i,j}$ as follows.
 \begin{align}
-\max &\sum_{i=1}^{|V_1|} \sum_{j=1}^{|V_2|} \; \omega(C_i, C'_j) x_{i,j} \label{eq:max} \\
-\text{s.t.} &\sum_{j=1}^{|V_2|} \; x_{i,j} \leq 1 & \forall i \in \{1,...,|V_1|\} \label{eq:V_1} \\
-&\sum_{i=1}^{|V_1|} \; x_{i,j} \leq 1 & \forall j \in \{1,...,|V_2|\} \label{eq:V_2} \\
+\max &\sum_{i=1}^{n-2} \sum_{j=1}^{n-2} \; \omega(C_i, C'_j) x_{i,j} \label{eq:max} \\
+\text{s.t.} &\sum_{j=1}^{n-2} \; x_{i,j} \leq 1 & \forall i \in \{1,...,n-2\} \label{eq:V_1} \\
+&\sum_{i=1}^{n-2} \; x_{i,j} \leq 1 & \forall j \in \{1,...,n-2\} \label{eq:V_2} \\
 &x_{i,j} + x_{k,l} \leq 1 & \forall \{(i,j), (k,l)\} \in \mathcal{I} \label{eq:arb} \\
-&x_{i,j} \in \{0,1\} & \forall i \in \{1,...,|V_1|\}, \forall j \in \{1,...,|V_2|\} \label{eq:int}
+&x_{i,j} \in \{0,1\} & \forall i \in \{1,...,n-2\}, \forall j \in \{1,...,n-2\} \label{eq:int}
 \end{align}
-Let $x^*_{i,j}$ be the values of the indicator variables $x_{i,j}$ of an optimal solution of the linear integer problem. Let $M^*$ be the following set of edges:
+Let $x^*_{i,j}$ be the values of the indicator variables $x_{i,j}$ of an optimal solution of the ILP. Let $M^*$ be the following set of edges:
 $$(C_i,C_j') \, \in \, M^* \quad \Leftrightarrow \quad x^*_{i,j} = 1$$
 Then the set of edges $M^*$ is a matching that realizes the value of the gRF:
 $$d_{\delta}(T_1, T_2) = d_{\delta}(M^*)$$
 \end{thm}
-\begin{proof}Here we sketch the proof of the equivalence between the linear integer program~(\ref{eq:max}) - (\ref{eq:int}) and the minimum cost arboreal matching problem.\\
+\begin{proof}Here we sketch the proof of the equivalence between the ILP~(\ref{eq:max}) - (\ref{eq:int}) and the minimum cost arboreal matching problem.\\
 First and foremost, the restriction to integer decision variables in Equation~(\ref{eq:int}) ensures, that we either choose an edge to be in the matching or not. Thus we indeed get a set of edges. Furthermore Equations~(\ref{eq:V_1}) and~(\ref{eq:V_2}) restricts the chosen set of edges to be a (not necessarily complete) matching. Last but not least, because of Equation~(\ref{eq:arb}) we can be certain that the matching we end up with is a an arboreal matching, since we constructed the set $\mathcal{I}$ exactly this way. As proven in Lemma~\ref{lem:costfct}, the arboreal matching of maximum cost with respect to the cost function~(\ref{eq:max}) is an arboreal matching that minimizes the gRF $d_{\delta}(T_1, T_2)$.
 \end{proof}
+\begin{rem}
+The number of non-trivial for a phylogenetic tree with $X$ as the set of taxa is $n-2$ as shown in Remark~\ref{rem:n-2clades}. Thus the sums in the inequalities (\ref{eq:max}),(\ref{eq:V_1}),(\ref{eq:V_2}) have an upper bound of $n-2$.\\
+\end{rem}
+The number of restrictions of the ILP influences the running time of any algorithm that computes or approximates an optimal solution. It is obvious, that there are $2n-4=\mathcal{O}(n)$ restrictions handling the issue of ending up with a viable matching (\ref{eq:V_1}), (\ref{eq:V_2}). \\
+Computing the number of restrictions for ensuring the matching to be arboreal, Inequalities (\ref{eq:arb}), depends on the set $\mathcal{I}$. However the following lemma shows the order of the size of $\mathcal{I}$.
+\begin{lem}\label{lem:numberOfRestrictions}
+Let two phylogenetic trees $T_1$, $T_2$ with set of taxa $X$, $|X| =: n$, and the set $\mathcal{I}$ be given as described in Equation~(\ref{eq:setI}). Then the size of $\mathcal{I}$ is of order:
+$$|\mathcal{I}| = \mathcal{O}(n^2 \log(n)^2)$$
+\end{lem}
+\begin{proof}
+For a non-trivial clade $C^{(i)} \in \mathcal{C}(T_i)$, $i \in \{1,2\}$, we define the set of non-trivial predecessor clades as follow:
+$$P(C^{(i)}) := \{C | C \in \mathcal{C}^*(T_i), C^{(i)} \subsetneq C\}$$ 
+By definition every clade in $\mathcal{C}^*(T_i)$ corresponds to a node $v^{(i)}_{C^{(i)}} \in V(T_i)$. Thus every clade in the set of non-trivial predecessor clades $P(C^{(i)})$ corresponds to an inner node on the path from $v^{(i)}_{C^{(i)}}$ to the root of $T_i$.
+
+\textbf{Claim 1}. Let $C^{(i)} \in \mathcal{C}(T_i)$, $i \in \{1,2\}$ be given, where both of them have a non-trivial predecessor: $|P(C^{(i)})| \geq 1$. Furhtermore let $C^{(i)'} \in P(C^{(i)})$ be given for $i \in \{1,2\}$. Then the following inclusion holds:
+$$ \{(C^{(1)},C^{(2)'}), (C^{(1)'}, C^{(2)})\} \in \mathcal{I}$$
+
+\textit{Proof of Claim 1}. Because of the way the non-trivial predecessors are constructed, we know that $C^{(1)} \subsetneq C^{(1)'}$ and $C^{(2)} \subsetneq C^{(2)'}$. Thus the set of edges does not fulfill the conditions (1) and (2) of the definition for arboreal matchings.
+
+Therefore we have to count the number of such pairings to get a lower bound on the size of $\mathcal{I}$. For an inner node $v_i \in V(T_i)$ corresponding to a clade $C^{(i)}$ we define the following value:
+$$p(v_i) := |P(C^{(i)}|$$ 
+This value suggests how many pairings of clades within tree $T_i$ exist, where $C^{(i)}$ is the smaller clade. Furthermore we introduce the following value:
+$$P(T_i) = \{ p(v) | v \in V(T_i), \, v \text{ inner node of }T_i\} $$
+
+Let's take a look at Figure~\ref{fig:path_length}. The figure demonstrates that the value $p(v_i)$ is exactly the height of this node decreased by $1$, since the root does not count as a non-trivial predecessor. In tree $T_1$ there are overall $2$ possible pairings of a clade and a clade containing the first one, in tree $T_2$ there are 3 pairings. Using the notation above we have:
+$$ P(T_1) = 2,\quad P(T_2) = 3$$
+Thus overall the set $\mathcal{I}$ has to have at least $P(T_1)*P(T_2)=6$ pairings of edges as constructed in Claim 1.\\
+
+\textbf{Claim 2}. Let $T_1$, $T_2$ be two full binary trees with the same number of leaves. Let $T_1$ be \textit{more balanced} than $T_2$, meaning:
+$$ \sum_{v \in V(T_1)} \text{height}(v) < \sum_{v \in V(T_2)} \text{height}(v)$$
+Then the following statement is true:
+$$P(T_1) < P(T_2)$$
+
+\textit{Proof of Claim 2}. If $T_1$ is more balanced, the same holds true for the trees induced by the inner nodes of $T_1$ and $T_2$ respectively. For an inner node $v_i$ in $T_i$, the only difference between height$(v_i)$ and the value $p(v_i)$ is, that the height counts the root of $T_i$ as well. And since the number of inner nodes are the same in both trees the following inequalities hold:
+\begin{align*}
+\sum_{v \in V(T_1)} \text{height}(v) &< \sum_{v \in V(T_2)} \text{height}(v)\\
+\Rightarrow \sum_{v \text{ inner node of }T_1} \text{height}(v) &< \sum_{v \text{ inner node of }T_2} \text{height}(v)\\
+\Rightarrow \sum_{\substack{v \text{ inner node of }T_1 \\ v \neq r_{T_1}}} \text{height}(v) + \text{height}(r_{T_1}) &< \sum_{\substack{v \text{ inner node of }T_2 \\ v \neq r_{T_2}}} \text{height}(v) + \text{height}(r_{T_2}) \\
+\Rightarrow \sum_{\substack{v \text{ inner node of }T_1 \\ v \neq r_{T_1}}} (p(v)-1) &< \sum_{\substack{v \text{ inner node of }T_2 \\ v \neq r_{T_2}}} (p(v)-1)\\
+\Rightarrow \sum_{\substack{v \text{ inner node of }T_1 \\ v \neq r_{T_1}}} p(v) \quad -(n-2) &< \sum_{\substack{v \text{ inner node of }T_2 \\ v \neq r_{T_2}}} p(v) \quad -(n-2)\\
+\Rightarrow P(T_1) &< P(T_2) \\
+\end{align*}
+
+Let $f: \, \mathbb{N} \to \mathbb{N}$ be a function s.t. $f(n)$ is a tight lower bound on $P(T)$ for any full binary tree $T$ with $n$ leaves.
+
+\textbf{Claim 3}. Let $k \in \mathbb{N}_{\geq 2}$. Then:
+$$f(2^k) = (k-3)2^k + 4$$
+
+\textit{Proof of Claim 3}. We make an inductive argument.
+We start with the induction base where $k =2$:\\
+Let $T$ be the perfectly balanced tree with $4$ leaves. As shown in Claim 2, this tree has the smallest value $P(T)$ among all full binary trees with $4$ leaves. This argument is supported by the fact that $P(T)=0$.
+$$f(2^2)= (2-3)2^2 +4 = -1*4 - 4 = 0$$
+\begin{figure}\label{fig:build2K}
+    \begin{subfigure}[b]{0.8\textwidth}
+        \includegraphics[width=\textwidth]{figures/2k_construction1.png}
+        \caption{First we start with two perfectly balanced trees with $2^k$ leaves each.}
+    \end{subfigure}
+    \quad
+    \begin{subfigure}[b]{0.8\textwidth}
+        \includegraphics[width=\textwidth]{figures/2k_construction2.png}
+        \caption{Now we connect them by adding a new root node and appending the roots of the trees as children.}
+    \end{subfigure}
+    \caption{The value of $p(v)$ increases by $1$ for all inner nodes of the starting trees. }
+\end{figure}
+Thus we have proven our induction base\\
+For the induction step, assume that the statement is true $\forall k < K$.\\
+Now we have to prove the statement for $k = K$. Let $T'$ be the balanced tree with $2^{(K-1)}$ leaves and $T$ the one with $2^K$ leaves. Constructing $T$ can be done by taking two trees with the structure of $T'$, adding a root $r_T$ and adding the roots of the smaller trees $T'$ as children of $r_T$. This procedure is sketched in Figure~\ref{fig:build2K}. This idea simplifies the computation of $P(T)$:\\
+Let $r_{T'}$ be a root of the left or the right subtree of $T$. Since the two subtrees are equivalent, the following argument works for both subtrees. The node $r_{T'}$ suddenly becomes an inner node in $T$. However the value $p(r_{T'}) = 0$ since the parent of $r_{T'}$ is the root and therefore not a non-trivial predecessor. However the value of all inner nodes in $T'$ increases by $1$, since they get a new non-trivial predecessor. So overall we just have to add the number of inner nodes in $T'$, which is $2^{(K-1)}-2$, to the already known value $P(T')=f(2^{(K-1)})$ and multiply it by $2$, since we have to add this value for the left and the right subtree:
+\begin{align*}
+\Rightarrow f(2^K) &= 2(f(2^{(K-1)}) + 2^{(K-1)}-2) \\
+&= 2(((K-1)-3)2^{(K-1)}+4) + 2^K -4 \\
+&= (K-4)2^K +8 +2^K -4 \\
+&= (K-3)2^K +4
+\end{align*}
+
+\textit{Claim 4}. Let $k,l \in \mathbb{N}_{\geq 2}$, s.t. $2^k > l$. Then:
+$$f(2^k+l) = (k-3)2^k + 4 + (k-1)l$$
+
+\textit{Proof of Claim 4}. The variables $k$ and $l$ are chosen this way to find a value for $f(n)$ for all $n \in \mathbb{N}$. Using Claim 2 once again, we know that for minimizing $f(n)$, we have to find a tree with $n$ leaves which is as balanced as possible. Since $2^k > l$, we know that $2^k + l < 2^{(k+1)}$. It is easy to see, that the most balanced tree can be constructed the following way:
+\begin{enumerate}
+\item Start with a tree $T$ which is a balanced tree with $2^k$ leaves.
+\item Choose $l$ leaves of $T$ and exchange these leaves with full binary tree with $2$ leaves.
+\end{enumerate}
+Thus the newly constructed tree $T'$ ends up with $2^k+l$ leaves. Alltogether $T'$ has $2l$ leaves with height $k+1$ and others stay at the height of $k$. At the same time $T'$ has $l$ more inner nodes than $T$. All of them have a height of $k$, so $p(v)=k-1$ for all such nodes $v$. Therefore the following statement is true:
+\begin{align*}
+P(T') &= P(T) + (k-1)l \\
+\Rightarrow f(2^k+l) &= f(2^k) + (k-1)l \\
+\Rightarrow f(2^k+l) &= (k-3)2^k + 4 + (k-1)l
+\end{align*}
+
+\textbf{Claim 5}. Let $n \in \mathbb{N}_{\geq 2}$. Then:
+$$f(n) = (2\lfloor \log_2(n) \rfloor -4)n - (\lfloor \log_2(n)\rfloor -1)2^{\lfloor \log_2(n) \rfloor}$$
+
+\textit{Proof of Claim 5}. Let $k,l \in \mathbb{N}$ s.t. $2^k > l$ and $n = 2^k +l$.
+\begin{align*}
+\Rightarrow k &= \lfloor \log_2(n) \rfloor \\
+\Rightarrow l &= n - 2^k = n - \lfloor \log_2(n) \rfloor \\
+\Rightarrow f(n) &= f(2^k+l) = (k-3)2^k +4 + (k-1)l \\
+&= (\lfloor \log_2(n) \rfloor -3)2^{\lfloor \log_2(n) \rfloor} + (\lfloor \log_2(n) \rfloor -1) (n-2^{\lfloor \log_2(n) \rfloor}) +4 \\
+&= n(\lfloor \log_2(n) \rfloor -1) -4*2^{\lfloor \log_2(n) \rfloor} +4
+\end{align*}
+Now we easily see the order of $f(n)$:
+\begin{align*}
+\mathcal{O}(f(n)) &= \mathcal{O}(n(\lfloor \log_2(n) \rfloor -1) + \mathcal{O}(4*2^{\lfloor \log_2(n) \rfloor}) + \mathcal{O}(4) \\
+&= \mathcal{O}(n\log(n)) +\mathcal{O}(n) +\mathcal{O}(1)\\
+&= \mathcal{O}(n\log(n))
+\end{align*}
+
+To conclude the proof of Lemma~\ref{lem:numberOfRestrictions} we can use the result of Claim 5. We know that $P(T_1) = P(T_2) = \mathcal{O}(n\log(n))$. Thus we can construct at least $\mathcal{O}(n^2\log^2(n))$ pairings of edges that violate the requirements for an arboreal matching.
+\end{proof}
+We will later see how the number of restriction influences the running time of computing the gRF with this ILP model.
