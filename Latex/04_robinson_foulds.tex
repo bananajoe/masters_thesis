@@ -11,8 +11,14 @@ The scientific field of phylogenetics is the field of evolutionary relationships
 \end{figure}
 Multifurcations may occur due to missing data for inferring the phylogeny. Often they appear in consensus trees, when partially contradictory trees were obtained by some methods. A perfectly resolved phylogenetic tree doesn't have any multifurcations implying a binary phylogenetic tree. 
 
+\begin{figure}
+	\centering
+	\includegraphics[width=0.4\textwidth]{figures/cats_evolution.png}
+	\caption{A simplified phylogenetic tree that shows the evolutionary connection between five big cats and the domestic house cat. The complexity of finding this task is described in the paper by Figueiró et al.~\cite{Fig}.}
+\end{figure}
+
 \section{The original metric}
-The most commonly used distance measurement was introduced by Robinson and Foulds []. They introduced the term clade, which describes a group of leaves that have a common ancestor which they do not share with any other node.
+The most commonly used distance measurement was introduced by Robinson and Foulds~\cite{Rob}. They introduced the term \textit{clade}, which describes a group of leaves that have a common ancestor which they do not share with any other node.
 
 The Robinson-Foulds metric is quite intuitive and easy to compute. It is the average number of non-trivial clades that are present in exactly one of the two trees:
 \begin{defin}
@@ -34,7 +40,7 @@ d_{RF} = \frac{1}{2}|\mathcal{C}^*(T_1) \bigtriangleup \mathcal{C}^*(T_2)| &= \f
 d_{RF} = \frac{1}{2}(6 + 6) = 6
 \end{align*}
 However the third tree $T_3$ also has the same RF distance of $6$ to both trees $T_1$ and $T_2$. This points to another big disadvantage of the Robinson Foulds distance. The distribution of the distances is very much concentrated on the upper end of the scale. Two arbitrary phylogenetic trees with $n$ leaves on the same set of taxa have a high probability to have a Robinson Foulds distance of $n-2$. Furthermore the example shows that the Robinson Foulds distance does not compare the structure of the two trees. Otherwise the distance between $T_1$ and $T_2$ would be much smaller than the one to the tree $T_3$. 
-\begin{figure}[ht!] \label{fig:maxRFdist}
+\begin{figure}[ht!]\label{fig:maxRFdist}
     \begin{subfigure}[b]{0.45\textwidth}
         \includegraphics[width=\textwidth]{figures/RF_tree1.jpg}
     \end{subfigure}
@@ -51,7 +57,7 @@ However the third tree $T_3$ also has the same RF distance of $6$ to both trees 
  
 \section{The Generalized Robinson Foulds}
 To take advantage of structural similarities between $T_1$, $T_2$ Böcker et al.~\cite{Boe} suggested to extend the Robinson Foulds metric. They wanted to relax the condition of counting any clade which appears in the set of clades for one but not both trees. Therefore they introduced a bipartite graph $G(T_1, T_2)$ depending on the two trees under consideration. 
-\begin{defin} \label{def:RFGraph}
+\begin{defin}\label{def:RFGraph}
 Let $T_1, T_2$ be two phylogenetic trees with the same number of leaves $n$ and on the same set of taxa $X$. We define the complete bipartite graph $G_{T_1,T_2}$ on the following set of nodes:
 $$G_{T_1,T_2}: \, \mathcal{C}^*(T_1) \times \mathcal{C}^*(T_2)$$
 \end{defin}
@@ -105,7 +111,7 @@ Let $M^*$ be a maximal cost matching in $G_{T_1, T_2}$. Then the following impli
 \end{gather*}
 Additionally, if $\delta$ is a metric, the triangle inequality holds true. Thus all all weights are non-negative.
 \end{proof}
-Let's compute the distances defined in Definition~\ref{def:RFcostfct}of the trees $T_2, T_2$ from Figure~\ref{fig:preRFdist} with respect to the costs of the symmetric difference between sets:
+Let's compute the distances defined in Definition~\ref{def:RFcostfct} of the trees $T_1, T_2$ from Figure~\ref{fig:preRFdist} with respect to the costs of the symmetric difference between sets:
 $$\delta_{sym}(C, C') = |C \triangle C'| = |C \cup C'| - |C \cap C'|$$
 In this case, the best way to match a clade $\{1,...,j\} \in \mathcal{C}^*(T_1), j \geq 3$ to a clade in $\mathcal{C}^*(T_2)$ is to match it with the clade $\{2,...,j\}$, since its symmetric difference is only $1$. This handles all cases except for the clade $\{1,2\} \in \mathcal{C}^*(T_1)$ and $\{1,8\} \in \mathcal{C}^*(T_2)$. Matching those two clades is better than keeping them unassigned, since:
 $$\delta_{sym}(\{1,2\},\{1,8\}) = 2 < 4 = \delta_{sym}(\{1,2\},\emptyset) + \delta_{sym}(\emptyset, \{1,8\})$$
@@ -189,7 +195,8 @@ $$\delta_k(C_1,C_2) =
 &\Rightarrow (C_1 \cup C_2) \setminus (C_1 \cap C_2) \neq \emptyset \\
 &\Rightarrow |C_1 \cup C_2| > |C_1 \cap C_2| \\
 &\Rightarrow \frac{|C_1 \cap C_2|}{|C_1 \cup C_2|} < 1 \\
-&\Rightarrow (\frac{|C_1 \cap C_2|}{|C_1 \cup C_2|})^k \underset{k \to \infty}{\to} 0
+&\Rightarrow (\frac{|C_1 \cap C_2|}{|C_1 \cup C_2|})^k \underset{k \to \infty}{\to} 0 \\
+&\Rightarrow \delta_k(C_1,C_2) = 1 - (\frac{|C_1 \cap C_2|}{|C_1 \cup C_2|})^k \underset{k \to \infty}{\to} 1 \\
 \end{align*}
 \end{proof}
 \begin{defin}
