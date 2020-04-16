@@ -31,6 +31,7 @@
 \contentsline {section}{\numberline {7.1}Shasha and Zhang's algorithm by Henderson}{61}{section.7.1}%
 \contentsline {section}{\numberline {7.2}Distance measures}{65}{section.7.2}%
 \contentsline {section}{\numberline {7.3}Results}{66}{section.7.3}%
-\contentsline {section}{\numberline {7.4}Comparing Results}{67}{section.7.4}%
-\contentsline {chapter}{\numberline {8}Conclusion}{68}{chapter.8}%
-\contentsline {chapter}{\nonumberline Bibliography}{70}{chapter*.24}%
+\contentsline {chapter}{\numberline {8}Comparing the Tree Edit Distance and the generalized Robinson Foulds Distance}{70}{chapter.8}%
+\contentsline {section}{\numberline {8.1}Time Complexity}{70}{section.8.1}%
+\contentsline {chapter}{\numberline {9}Conclusion}{71}{chapter.9}%
+\contentsline {chapter}{\nonumberline Bibliography}{73}{chapter*.24}%

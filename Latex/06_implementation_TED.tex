@@ -1,5 +1,5 @@
 \chapter{Implementation Tree Edit Distance}
-In this chapter we present the implementation of Shasha and Zhangs algorithm by Henderson~\cite{Hen}. We discuss meaningful choices of cost functions and compare them with each other. Last but not least we compare the tree edit distance's advantages and disadvantages with respect to the Generalized Robinson Foulds distance. 
+In this chapter we present the implementation of Shasha and Zhangs algorithm by Henderson~\cite{Hen}. We discuss meaningful choices of cost functions and compare them with each other. We present a short overview over our solutions which then leads us to our next chapter where we compare the experiences of Shasha and Zhang's algorithm and the GRF.
 
 \section{Shasha and Zhang's algorithm by Henderson}
 Suppose we want to compute the tree edit distance for two trees $A$ and $B$. Henderson's implementation can be split into two separated important steps:
@@ -28,28 +28,50 @@ After the initialization of the AnnotatedTree, the actual computation of the tre
 
 \section{Distance measures}
 The most simple distance measure for the tree edit distance just counts the number of operations needed to transform one tree into the other. This implies that any insertion, any deletion and any renaming costs the same value of $1$. We call this distance measure the \textit{standard tree edit distance} (STED)\\
-The big difference between the tree edit distance and the generalized Robinson Foulds is that the latter does not take the interior nodes of the trees into account. Yet every insertion and deletion of an interior node increases the tree edit distance. Therefore the first adaption on the operation costs we did was to make the insertion and deletion of interior nodes free of charge. We will later see how this influences the overall comparison between these two distances. This distance measure will later be referred to as \textit{cheap tree edit distance} (CTED)\\
-Another distinction is that the Robinson Foulds distance doesn't make a difference between left and right. Therefore there was an attempt to improve the distance measure by adapting the direction. The idea is to change one of the trees by swapping the order among some sibling pairings. Considering all combinations of sibling pairings leeds to $O(2^n)$ possibilities of swapping siblings, which is obviously not a good solution. To explain our approach we consider the two roots $r_1$ and $r_2$ of the inspected trees.
+The big difference between the tree edit distance and the gRF is that the latter does not take the interior nodes of the trees into account, structural differences like inserting an interior node to prolong the path at some point, does not affect the gRF immediately. However one has to perform at least an additional deletion-operation when using the tree edit distance. Every insertion and deletion of an interior node increases the tree edit distance. Therefore the first adaption on the operation costs we did was to make the insertion and deletion of interior nodes free of charge. We will later see how this influences the overall comparison between these two distances. This distance measure will later be referred to as \textit{cheap tree edit distance} (CTED)\\
+Another distinction is that the Robinson Foulds distance doesn't make a difference between left and right. Therefore there was an attempt to improve the distance measure by adapting the direction. The idea is to adapt one of the trees by swapping the order among some sibling pairings. Considering all combinations of sibling pairings leeds to $O(2^n)$ possibilities of swapping siblings, which is obviously not a good approach. To explain our approach we consider the two roots $r_1$ and $r_2$ of the inspected trees.
 Let's denote the left subtree of the root $r_i$ as $L_i$ and the right one as $R_i$ for $i \in \{1,2\}$. If $|L_1| > |R_1|$, meaning that $L_1$ has more leaves than $R_1$, but the opposite holds true for the other tree, i.e. $|L_2| < |R_2|$, then we swap the children of $r_1$. The goal is to make the two trees as equally distributed as possible without changing the set of clusters for these randomly created trees. Thus the Robinson Foulds distance stays the same, but the tree edit distance may change. After having investigated the root we perform the same comparison between $l_1$ and $l_2$, $r_1$ and $r_2$ respectively. If we adapt one of the trees to make them as equally distributed as possible before calculating, we add the adjective \textit{adapted} to the distance. So later on we will refer to it as the \textit{adapted standard tree edit distance} (aSTED) and the \textit{adapted cheap tree edit distance} (aCTED).\\
-Furthermore we wanted to investigate a compromise bewteen the CTED and the STED by varying the costs of insertion and deletion of inner nodes. We introduced a variable $0 < \delta < 1$ for the costs of insertion and deletion. Assuming $\delta = \frac{1}{2}$,  we call this distance measure $\frac{1}{2}$-\textit{delta tree edit distance} ($\frac{1}{2}$-DTED).
+Furthermore we wanted to investigate a compromise bewteen the CTED and the STED by varying the costs of insertion and deletion of inner nodes. We introduced a variable $0 < \alpha < 1$ for the costs of insertion and deletion. Assuming $\alpha = \frac{1}{2}$,  we call this distance measure $\frac{1}{2}$-\textit{alpha tree edit distance} ($\frac{1}{2}$-ATED).
 
 \section{Results}
-For smaller trees we were able to compare the results with the ones from the generalized Robinson Foulds distance. But for trees with more than $32$ leaves it was not possible to solve the linear program, as this would have taken too much time. However we were able to compute the tree edit distance for trees with up to $512$ leaves. 
+We were able to compute the TED for instances up to $520$ leaves per tree. Afterwards, the problems became too big for the working memory of my computer. In most real life applications, two trees with up to $1000$ nodes in total should suffice. Otherwise one needs to perform the calculations on more powerful computers or servers. 
 
-Obviously, we came to the conclusion that the STED lead to bigger distance values than the CTED. This is trivial as every operation is as least as expensive for the STED in comparison to the CTED. Furthermore, to get a better feeling, we put the distances in relation to the number of leaves. From now on we denote the number of leaves on each tree as the variable $n$. We discovered two trends as $n$ is increasing:
+Comparing the different TEDs among each other, we obviously came to the conclusion that the STED lead to bigger distance values than the CTED or any $\alpha$-ATED. This is trivial as every operation is as least as expensive for the STED in comparison to the CTED or a $\alpha$-ATED. To be able to talk about the results, we introduce a little bit of notation:
 \begin{itemize}
-\item The average of the relation of the CTED to $n$ is diverging to $1$.
-\item The average of the relation of the STED to $n$ among all examples is strongly increasing.
+	\item \textit{Test-instances} $\mathcal{T}(n)$: This is the generated set of all test-instances where both trees have exactly $n$ leaves. Thus any instance is a set of two different, randomly generated phylogenetic trees on $n$ leaves on the set of taxa $X:= \{1,...,n\}$. Furthermore, we denote $\mathcal{T}$ the set of all test-instances, thus 
+	$$\mathcal{T} := \bigcup_{i \in I} \; \mathcal{T}(i) \quad I:= \{\substack{2,3,...12,16,20,24,32,40,\\48,64,128,192,256,512}\}$$
+	\item \textit{The average of a distance function $\delta$} $\mathcal{A}_{\delta}(n)$: Let $\delta$ be a distance function. The average $\mathcal{A}_{\delta}(n)$ is defined as follows:
+	$$ \mathcal{A}_{\delta}(n) := (\sum_{(T,T') \in \mathcal{T}(n)} \; d_{\delta}(T,T'))\frac{1}{|\mathcal{T}(n)|}\frac{1}{n} $$
+	This value is an indicator of the expected distance between two randomly generated phylogenetic trees with $n$ leaves with respect to the distance function $\delta$. Since the average distance will always increase as $n$ increases, we want to get a better feeling of how the average increases with respect to $n$, which explains the factor of $\frac{1}{n}$ in the end. For the CTED we denote this average as $\mathcal{A}_{CTED}(n)$, for the other distances analogously. 
 \end{itemize}
-The explanation for the first trend is rather intuitive. Figure~\ref{fig:CTED} indicates that any tree has distance $\leq n$ to any other tree on the same number of leaves $n$.
-\begin{figure}[!h]
-    \centering
-        \includegraphics[width=0.90\textwidth]{figures/CTED.png}
-        \caption{A step guide for limiting the CTED. First we delete all inner nodes until all leaves are directly connected to the root. Afterwards we insert all inner nodes until the structure is the same as the one of tree $T_2$. Now we only have to rename all leaves accordingly. Since the deletion and insertion of inner nodes is for free we end up with a CTED $\leq n$.}
-        \label{fig:CTED}
-\end{figure}
-Since the CTED converges to $n$ it seems as if this distance is not a good measure of similarities between structure of the two trees at all, but only whether the order of the leaves' labels is similar.\\
-Thus we investigated the DTED, mainly with $\delta = \frac{1}{2}$, and observed some interesting behaviors. For example, The distribution of the relation of the $\frac{1}{2}$-DTED to $n$ becomes more and more constant as $n$ is increasing. 
+During the discussion of our results, we observed some trends:
+\begin{itemize}
+\item The average $\mathcal{A}_{CTED}(n)$ seems to converge to $1$ as $n \to \infty$.
+\item The average $\mathcal{A}_{STED}(n)$ is strongly increasing as $n \to \infty$ and has an upper bound of $3$.
+\end{itemize}
+The first observation can be explained by the following lemmas:
+\begin{lem}\label{lem:CTED}
+	Let $T_1$ and $T_2$ be two phylogenetic trees with $n$ leaves on the same set of taxa. Let $\delta_{CTED}$ be the distance function used in the CTED. Then the following inequality holds true:
+	$$ d_{\delta_{CTED}}(T_1,T_2) \leq n$$
+\end{lem}
+\begin{proof}
+	The distance function $\delta_{CTED}$ allows us to insert and delete any interior node without any costs. Thus we can perform a standard procedure that ensures, that the overall costs are not greater than $n$. Figure~\ref{fig:CTED} demonstrates the aforementioned procedure for a small example.\\
+	First we delete all inner nodes until all leaves are directly connected to the root. As any deletion is free of charge, this step costs $0$ overall. Afterwards we insert inner nodes until the structure of the adapted tree is the same as the one of tree $T_2$. Once again, we don't have to pay anything, as an insertion is free of charge as well. Now we only have to relabel all leaves accordingly. The only thing left to do is to relabel all leaves until we end up with the same labelling as the one of tree $T_2$. The costs for the relabelling step is equal to the number of nodes that have to be relabelled. Thus it is trivial that the upper bound of $n$ is correct.
+	\begin{figure}[!h]
+		\centering
+		\includegraphics[width=0.90\textwidth]{figures/CTED.png}
+		\caption{A step guide for limiting the CTED by the number of leaves.}
+		\label{fig:CTED}
+	\end{figure}
+\end{proof}
+\begin{rem}
+	To calculate the actual average $\mathcal{A}_{CTED}(n)$ and whether it converges to $1$, one has to solve the following equation:
+	$$\mathcal{A}_{CTED}(n) = (\sum_{i = 0}^n \, n - i \, \mathbb{P}(\pi \text{ has exactly $i$ fixpoints})) \frac{1}{n}$$
+	where $\pi$ is an arbitrarily chosen permutation on the set $\{1,...,n\}$. 
+\end{rem}
+The second observation can be proven by the same procedure described in Lemma~\ref{lem:CTED}. The only difference is, that the first two steps both cost exactly $n-2$, as this is the number of interior nodes other than the root. 
 
+These two observations only resemble the data found during the computations. There are many special cases, where the procedure from Lemma~\ref{lem:CTED} does not yield the best solution. For trees $T_1$ and $T_2$ in Figure~\ref{fig:maxRFdist} for example, the cheapest way to manipulate $T_1$ is to delete the leave with label $1$ and its parent, insert an interior node on the edge of the root to leave $8$ and append leaf $1$ as another child. Thus the overall costs of the manipulation are $2$. Nevertheless in most cases the observed costs resemble the costs of the above mentioned procedure. All these considerations are based on the fact, that the actual costs of the CTED only depend on the permutation of the leaves' labels, but not on the actual structure of the trees. Two completely differently structured trees may have a CTED distance of $0$ as long as the underlying permutation of the labels is the same one with respect to the left to right order. Thus the CTED can be seen as a distance measure on permutations, but it does not reflect useful information in the context of structured trees.\\
+For the STED we saw that on the one hand, there are often better solutions than the plain procedure of deleting and inserting of all interior nodes, thus resembling more advanced solutions that indeed take the structure of the trees into account. On the other hand, this distance measure does not give a benefit on the interior nodes. Since we wanted to construct a distance measure that resembles the gRF while refining it, we failed to mainly concentrate on the clades and their leaves labels.
 
-\section{Comparing Results}
+Last but not least, we calculated the values for the $\alpha$-ATED with different values for $\alpha$. It is obvious that the average $\mathcal{A}_{\alpha -ATED}(n)$ is directly proportional to $\alpha$. For $\alpha \to 0$ the average $\mathcal{A}_{\alpha -ATED}(n) \to \mathcal{A}_{CTED}(n)$, for $\alpha \to 1$ the average $\mathcal{A}_{\alpha -ATED}(n) \to \mathcal{A}_{STED}(n)$. Furthermore we can prove the upper bound on the average $\mathcal{A}_{\alpha -ATED}(n) < n +\frac{2n}{\alpha}$ by the same procedure as described in Lemma~\ref{lem:CTED}.
