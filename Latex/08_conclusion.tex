@@ -1,5 +1,5 @@
 \chapter{Conclusion}
-This thesis tries to give a short insight into a large and widely ranged topic of comparing trees.
+This thesis tries to give a short insight into a large and widely ranged topic of comparing trees. 
 
 First we give some basic notations and definitions since the language varies greatly between different papers and authors. 
 
@@ -7,5 +7,9 @@ The first idea of comparing trees is the tree edit distance. Editing one tree in
 
 Moreover in chapter $4$ we proceed with the so called flexible tree matching. Here the idea is that one may relax the restrictions of ancestry and sibling groups. Instead of forbidding such violations we just have to pay a fine for any occurrence. Unfortunately finding the flexible tree edit distance is a strongly $\mathcal{NP}$-complete problem. Nevertheless we present a model for approximation heuristics. Kumar et al.~\cite{Kum} provided a Monte Carlo algorithm to compute an approximation of the flexible tree matching.
 
-In chapter $5$ we take a look at a widely used measure, the Robinson-Foulds metric. Working on the same set of taxa (or leaves), we want to know how many clades are present in exactly one of the two investigated trees. We discuss its advantages and disadvantages and generalize it to make it more applicable using more evolved cost functions. However, we still end up with a $\mathcal{NP}$-complete problem of finding a minimum cost arboreal matching between the sets of non-trivial clades.
+In chapter $5$ we take a look at a widely used measure, the Robinson-Foulds metric. This specific distance metric can be applied to compare phylogenetic trees. Working on the same set of taxa (or leaves), we want to know how many clades are present in exactly one of the two investigated trees. We discuss its advantages and disadvantages and generalize it to make it more applicable using more evolved cost functions. However, we still end up with a $\mathcal{NP}$-complete problem of finding a minimum cost arboreal matching between the sets of non-trivial clades.
 
+The long computing time is the reason why we want to compare the tree edit distance with the generalized Robinson-Foulds metric. It would be a great advantage to simulate the generalized Robinson-Foulds metric with the efficient running time of tree edit distance algorithms. \\
+We explain our implementation details within chapters $6$ and $7$. We explain the randomized generation of test instances, how we implement the binary linear program to compute the generalized Robinson-Foulds metric and provide the implementation of Shasha and Zhang's algorithm. 
+
+In the last chapter we compare the computational results. We demonstrate how much faster the tree edit distance can be computed and discuss the possible similarities of these two distance measures. However we draw the conclusion, that they are very much independent from one another. There is a small correlation, that a higher generalized Robinson-Foulds distance also suggests a higher tree edit distance. Nevertheless our results show that there can't be a direct proportional correlation between them.

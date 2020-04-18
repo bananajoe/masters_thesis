@@ -33,5 +33,6 @@
 \contentsline {section}{\numberline {7.3}Results}{66}{section.7.3}%
 \contentsline {chapter}{\numberline {8}Comparing the Tree Edit Distance and the generalized Robinson Foulds Distance}{70}{chapter.8}%
 \contentsline {section}{\numberline {8.1}Time Complexity}{70}{section.8.1}%
-\contentsline {chapter}{\numberline {9}Conclusion}{71}{chapter.9}%
-\contentsline {chapter}{\nonumberline Bibliography}{73}{chapter*.24}%
+\contentsline {section}{\numberline {8.2}Discussing the Results}{71}{section.8.2}%
+\contentsline {chapter}{\numberline {9}Conclusion}{76}{chapter.9}%
+\contentsline {chapter}{\nonumberline Bibliography}{78}{chapter*.30}%

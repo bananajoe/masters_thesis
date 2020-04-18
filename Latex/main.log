@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019/W32TeX) (preloaded format=pdflatex 2020.4.2)  9 APR 2020 09:29
+This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019/W32TeX) (preloaded format=pdflatex 2020.4.2)  18 APR 2020 21:05
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1486,7 +1486,7 @@ LaTeX Warning: Citation `And' on page 1 undefined on input line 7.
 chapter 2.
 Package hyperref Info: bookmark level for unknown defin defaults to 0 on input 
 line 6.
-<figures/rooted_tree.jpg, id=132, 973.38657pt x 461.47406pt>
+<figures/rooted_tree.jpg, id=136, 973.38657pt x 461.47406pt>
 File: figures/rooted_tree.jpg Graphic file (type jpg)
 <use figures/rooted_tree.jpg>
 Package pdftex.def Info: figures/rooted_tree.jpg  used on input line 10.
@@ -1545,12 +1545,12 @@ LaTeX Font Info:    Font shape `U/msb/m/n' will be
 (Font)              scaled to size 5.21004pt on input line 86.
  <xymatrix 7x4 476> <xymatrix 7x3 350> <xymatrix 4x3
 178> <xymatrix 3x3 166> <xymatrix 3x2 124> [5] [6]
-<figures/heavy_nodes.jpg, id=202, 992.95969pt x 389.20406pt>
+<figures/heavy_nodes.jpg, id=206, 992.95969pt x 389.20406pt>
 File: figures/heavy_nodes.jpg Graphic file (type jpg)
 <use figures/heavy_nodes.jpg>
 Package pdftex.def Info: figures/heavy_nodes.jpg  used on input line 178.
 (pdftex.def)             Requested size: 179.25116pt x 70.25562pt.
-<figures/heavy_path_decomposition.jpg, id=203, 991.45406pt x 386.19281pt>
+<figures/heavy_path_decomposition.jpg, id=207, 991.45406pt x 386.19281pt>
 File: figures/heavy_path_decomposition.jpg Graphic file (type jpg)
 <use figures/heavy_path_decomposition.jpg>
 Package pdftex.def Info: figures/heavy_path_decomposition.jpg  used on input li
@@ -1569,38 +1569,38 @@ Package hyperref Info: bookmark level for unknown lem defaults to 0 on input li
 ne 209.
 
 [8]
-<figures/_full_binaryTrees.png, id=231, 2343.50531pt x 807.7678pt>
+<figures/_full_binaryTrees.png, id=235, 2343.50531pt x 807.7678pt>
 File: figures/_full_binaryTrees.png Graphic file (type png)
 <use figures/_full_binaryTrees.png>
 Package pdftex.def Info: figures/_full_binaryTrees.png  used on input line 225.
 
 (pdftex.def)             Requested size: 239.0056pt x 82.37149pt.
  [9 <./figures/_full_binaryTrees.png>]
-<figures/TreeEditOperation_1.png, id=243, 560.8453pt x 590.95781pt>
+<figures/TreeEditOperation_1.png, id=247, 560.8453pt x 590.95781pt>
 File: figures/TreeEditOperation_1.png Graphic file (type png)
 <use figures/TreeEditOperation_1.png>
 Package pdftex.def Info: figures/TreeEditOperation_1.png  used on input line 24
 7.
 (pdftex.def)             Requested size: 71.69803pt x 75.54675pt.
-<figures/TreeEditOperation_1,5.png, id=244, 355.3275pt x 374.90062pt>
+<figures/TreeEditOperation_1,5.png, id=248, 355.3275pt x 374.90062pt>
 File: figures/TreeEditOperation_1,5.png Graphic file (type png)
 <use figures/TreeEditOperation_1,5.png>
 Package pdftex.def Info: figures/TreeEditOperation_1,5.png  used on input line 
 251.
 (pdftex.def)             Requested size: 71.69803pt x 75.64809pt.
-<figures/TreeEditOperation_2.png, id=245, 560.8453pt x 590.95781pt>
+<figures/TreeEditOperation_2.png, id=249, 560.8453pt x 590.95781pt>
 File: figures/TreeEditOperation_2.png Graphic file (type png)
 <use figures/TreeEditOperation_2.png>
 Package pdftex.def Info: figures/TreeEditOperation_2.png  used on input line 25
 5.
 (pdftex.def)             Requested size: 71.69803pt x 75.54675pt.
-<figures/TreeEditOperation_2,5.png, id=246, 358.33875pt x 376.40625pt>
+<figures/TreeEditOperation_2,5.png, id=250, 358.33875pt x 376.40625pt>
 File: figures/TreeEditOperation_2,5.png Graphic file (type png)
 <use figures/TreeEditOperation_2,5.png>
 Package pdftex.def Info: figures/TreeEditOperation_2,5.png  used on input line 
 259.
 (pdftex.def)             Requested size: 71.69803pt x 75.30862pt.
-<figures/TreeEditOperation_3.png, id=247, 560.8453pt x 590.95781pt>
+<figures/TreeEditOperation_3.png, id=251, 560.8453pt x 590.95781pt>
 File: figures/TreeEditOperation_3.png Graphic file (type png)
 <use figures/TreeEditOperation_3.png>
 Package pdftex.def Info: figures/TreeEditOperation_3.png  used on input line 26
@@ -1630,38 +1630,38 @@ See the caption package documentation for explanation.
 
 LaTeX Warning: Reference `fig:TEE' on page 13 undefined on input line 19.
 
-<figures/TreeEditExample_1.jpg, id=291, 560.8453pt x 534.49687pt>
+<figures/TreeEditExample_1.jpg, id=295, 560.8453pt x 534.49687pt>
 File: figures/TreeEditExample_1.jpg Graphic file (type jpg)
 <use figures/TreeEditExample_1.jpg>
 Package pdftex.def Info: figures/TreeEditExample_1.jpg  used on input line 23.
 (pdftex.def)             Requested size: 155.3518pt x 148.0514pt.
-<figures/TreeEditExample_1,5.jpg, id=292, 309.40594pt x 534.49687pt>
+<figures/TreeEditExample_1,5.jpg, id=296, 309.40594pt x 534.49687pt>
 File: figures/TreeEditExample_1,5.jpg Graphic file (type jpg)
 <use figures/TreeEditExample_1,5.jpg>
 Package pdftex.def Info: figures/TreeEditExample_1,5.jpg  used on input line 24
 .
 (pdftex.def)             Requested size: 79.6665pt x 137.62021pt.
-<figures/TreeEditExample_2.jpg, id=293, 560.8453pt x 534.49687pt>
+<figures/TreeEditExample_2.jpg, id=297, 560.8453pt x 534.49687pt>
 File: figures/TreeEditExample_2.jpg Graphic file (type jpg)
 <use figures/TreeEditExample_2.jpg>
 Package pdftex.def Info: figures/TreeEditExample_2.jpg  used on input line 25.
 (pdftex.def)             Requested size: 155.3518pt x 148.0514pt.
-<figures/TreeEditExample_3.jpg, id=294, 922.19531pt x 489.32813pt>
+<figures/TreeEditExample_3.jpg, id=298, 922.19531pt x 489.32813pt>
 File: figures/TreeEditExample_3.jpg Graphic file (type jpg)
 <use figures/TreeEditExample_3.jpg>
 Package pdftex.def Info: figures/TreeEditExample_3.jpg  used on input line 29.
 (pdftex.def)             Requested size: 179.25116pt x 95.10873pt.
-<figures/TreeEditExample_4.jpg, id=295, 922.19531pt x 489.32813pt>
+<figures/TreeEditExample_4.jpg, id=299, 922.19531pt x 489.32813pt>
 File: figures/TreeEditExample_4.jpg Graphic file (type jpg)
 <use figures/TreeEditExample_4.jpg>
 Package pdftex.def Info: figures/TreeEditExample_4.jpg  used on input line 31.
 (pdftex.def)             Requested size: 179.25116pt x 95.10873pt.
-<figures/TreeEditExample_5.jpg, id=296, 922.19531pt x 489.32813pt>
+<figures/TreeEditExample_5.jpg, id=300, 922.19531pt x 489.32813pt>
 File: figures/TreeEditExample_5.jpg Graphic file (type jpg)
 <use figures/TreeEditExample_5.jpg>
 Package pdftex.def Info: figures/TreeEditExample_5.jpg  used on input line 34.
 (pdftex.def)             Requested size: 179.25116pt x 95.10873pt.
-<figures/TreeEditExample_6.jpg, id=297, 922.19531pt x 489.32813pt>
+<figures/TreeEditExample_6.jpg, id=301, 922.19531pt x 489.32813pt>
 File: figures/TreeEditExample_6.jpg Graphic file (type jpg)
 <use figures/TreeEditExample_6.jpg>
 Package pdftex.def Info: figures/TreeEditExample_6.jpg  used on input line 36.
@@ -1710,7 +1710,7 @@ Overfull \hbox (19.29817pt too wide) detected at line 151
 \OML/zplm/m/it/12 T[]\OT1/zplm/m/n/12 ) = []
  []
 
-<figures/optimal_algorithm.jpg, id=388, 568.37344pt x 216.81pt>
+<figures/optimal_algorithm.jpg, id=392, 568.37344pt x 216.81pt>
 File: figures/optimal_algorithm.jpg Graphic file (type jpg)
 <use figures/optimal_algorithm.jpg>
 Package pdftex.def Info: figures/optimal_algorithm.jpg  used on input line 154.
@@ -1726,7 +1726,7 @@ LaTeX Warning: Reference `fig:S_D' on page 21 undefined on input line 158.
 [21 <./figures/optimal_algorithm.jpg>]
 Package hyperref Info: bookmark level for unknown thm defaults to 0 on input li
 ne 167.
-<figures/O(m^2n).JPG, id=401, 1343.0175pt x 498.36188pt>
+<figures/O(m^2n).JPG, id=405, 1343.0175pt x 498.36188pt>
 File: figures/O(m^2n).JPG Graphic file (type jpg)
 <use figures/O(m^2n).JPG>
 Package pdftex.def Info: figures/O(m^2n).JPG  used on input line 184.
@@ -1736,14 +1736,14 @@ Package pdftex.def Info: figures/O(m^2n).JPG  used on input line 184.
 LaTeX Warning: No positions in optional float specifier.
                Default added (so using `tbp') on input line 196.
 
-<figures/O(m^2nlogn_m).JPG, id=416, 1087.06125pt x 359.09157pt>
+<figures/O(m^2nlogn_m).JPG, id=420, 1087.06125pt x 359.09157pt>
 File: figures/O(m^2nlogn_m).JPG Graphic file (type jpg)
 <use figures/O(m^2nlogn_m).JPG>
 Package pdftex.def Info: figures/O(m^2nlogn_m).JPG  used on input line 198.
 (pdftex.def)             Requested size: 215.33499pt x 71.13188pt.
 ) (./03_flexible_tree_matching.tex [23 <./figures/O(m^2nlogn_m).JPG>]
 chapter 4.
-<figures/DOM_website.png, id=424, 572.1375pt x 310.15875pt>
+<figures/DOM_website.png, id=428, 572.1375pt x 310.15875pt>
 File: figures/DOM_website.png Graphic file (type png)
 <use figures/DOM_website.png>
 Package pdftex.def Info: figures/DOM_website.png  used on input line 5.
@@ -1764,12 +1764,12 @@ Package microtype Info: Loading generic protrusion settings for font family
 (./figures/DOM_0.html [24
 
  <./figures/DOM_website.png>])
-<figures/DOM_0.jpg, id=440, 754.31813pt x 424.58624pt>
+<figures/DOM_0.jpg, id=445, 754.31813pt x 424.58624pt>
 File: figures/DOM_0.jpg Graphic file (type jpg)
 <use figures/DOM_0.jpg>
 Package pdftex.def Info: figures/DOM_0.jpg  used on input line 14.
 (pdftex.def)             Requested size: 398.33862pt x 224.21332pt.
-<figures/DOM_website_1.png, id=442, 572.1375pt x 352.31625pt>
+<figures/DOM_website_1.png, id=447, 572.1375pt x 352.31625pt>
 File: figures/DOM_website_1.png Graphic file (type png)
 <use figures/DOM_website_1.png>
 Package pdftex.def Info: figures/DOM_website_1.png  used on input line 22.
@@ -1788,7 +1788,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 33--34
  []
 
 [27 <./figures/DOM_website_1.png>] [28]
-<figures/Treeconcepts_flexible_tree_matching.png, id=503, 866.48718pt x 280.046
+<figures/Treeconcepts_flexible_tree_matching.png, id=507, 866.48718pt x 280.046
 25pt>
 File: figures/Treeconcepts_flexible_tree_matching.png Graphic file (type png)
 <use figures/Treeconcepts_flexible_tree_matching.png>
@@ -1810,7 +1810,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 2--3
 
  []
 
-<figures/multifurcation.png, id=531, 1515.41156pt x 961.34157pt>
+<figures/multifurcation.png, id=535, 1515.41156pt x 961.34157pt>
 File: figures/multifurcation.png Graphic file (type png)
 <use figures/multifurcation.png>
 Package pdftex.def Info: figures/multifurcation.png  used on input line 9.
@@ -1818,7 +1818,7 @@ Package pdftex.def Info: figures/multifurcation.png  used on input line 9.
 [32
 
 ]
-<figures/cats_evolution.png, id=536, 510.90875pt x 420.57124pt>
+<figures/cats_evolution.png, id=540, 510.90875pt x 420.57124pt>
 File: figures/cats_evolution.png Graphic file (type png)
 <use figures/cats_evolution.png>
 Package pdftex.def Info: figures/cats_evolution.png  used on input line 16.
@@ -1836,12 +1836,12 @@ LaTeX Warning: Reference `fig:maxRFdist' on page 34 undefined on input line 31.
 Underfull \vbox (badness 1888) has occurred while \output is active []
 
  [34]
-<figures/RF_tree1.jpg, id=559, 949.29657pt x 428.35031pt>
+<figures/RF_tree1.jpg, id=564, 949.29657pt x 428.35031pt>
 File: figures/RF_tree1.jpg Graphic file (type jpg)
 <use figures/RF_tree1.jpg>
 Package pdftex.def Info: figures/RF_tree1.jpg  used on input line 45.
 (pdftex.def)             Requested size: 179.25116pt x 80.88412pt.
-<figures/RF_tree2.jpg, id=560, 961.34157pt x 431.36156pt>
+<figures/RF_tree2.jpg, id=565, 961.34157pt x 431.36156pt>
 File: figures/RF_tree2.jpg Graphic file (type jpg)
 <use figures/RF_tree2.jpg>
 Package pdftex.def Info: figures/RF_tree2.jpg  used on input line 49.
@@ -1882,7 +1882,7 @@ LaTeX Warning: Reference `fig:preRFdist' on page 38 undefined on input line 114
 LaTeX Warning: Reference `fig:maxCostMatch' on page 39 undefined on input line 
 120.
 
-<figures/maxCostMatching.png, id=599, 1303.269pt x 839.0547pt>
+<figures/maxCostMatching.png, id=603, 1303.269pt x 839.0547pt>
 File: figures/maxCostMatching.png Graphic file (type png)
 <use figures/maxCostMatching.png>
 Package pdftex.def Info: figures/maxCostMatching.png  used on input line 123.
@@ -1944,12 +1944,12 @@ Overfull \hbox (32.23906pt too wide) detected at line 303
  []
 
 [49]
-<figures/2k_construction1.png, id=706, 1206.5075pt x 566.115pt>
+<figures/2k_construction1.png, id=710, 1206.5075pt x 566.115pt>
 File: figures/2k_construction1.png Graphic file (type png)
 <use figures/2k_construction1.png>
 Package pdftex.def Info: figures/2k_construction1.png  used on input line 316.
 (pdftex.def)             Requested size: 318.6721pt x 149.51874pt.
-<figures/2k_construction2.png, id=707, 1247.66125pt x 616.3025pt>
+<figures/2k_construction2.png, id=711, 1247.66125pt x 616.3025pt>
 File: figures/2k_construction2.png Graphic file (type png)
 <use figures/2k_construction2.png>
 Package pdftex.def Info: figures/2k_construction2.png  used on input line 321.
@@ -1981,19 +1981,19 @@ Overfull \hbox (8.83879pt too wide) detected at line 66
  []
 
 [57]
-<figures/python_tree_example_1.png, id=755, 2454.92157pt x 1491.32156pt>
+<figures/python_tree_example_1.png, id=759, 2454.92157pt x 1491.32156pt>
 File: figures/python_tree_example_1.png Graphic file (type png)
 <use figures/python_tree_example_1.png>
 Package pdftex.def Info: figures/python_tree_example_1.png  used on input line 
 79.
 (pdftex.def)             Requested size: 159.33301pt x 96.78001pt.
-<figures/python_tree_example_2.png, id=756, 2087.54906pt x 1069.74657pt>
+<figures/python_tree_example_2.png, id=760, 2087.54906pt x 1069.74657pt>
 File: figures/python_tree_example_2.png Graphic file (type png)
 <use figures/python_tree_example_2.png>
 Package pdftex.def Info: figures/python_tree_example_2.png  used on input line 
 82.
 (pdftex.def)             Requested size: 159.33301pt x 81.64763pt.
-<figures/python_tree_example_3.png, id=757, 2102.60532pt x 1247.41031pt>
+<figures/python_tree_example_3.png, id=761, 2102.60532pt x 1247.41031pt>
 File: figures/python_tree_example_3.png Graphic file (type png)
 <use figures/python_tree_example_3.png>
 Package pdftex.def Info: figures/python_tree_example_3.png  used on input line 
@@ -2023,7 +2023,7 @@ Underfull \vbox (badness 10000) has occurred while \output is active []
 
  [64]
 [65] [66]
-<figures/CTED.png, id=877, 420.8523pt x 110.814pt>
+<figures/CTED.png, id=881, 420.8523pt x 110.814pt>
 File: figures/CTED.png Graphic file (type png)
 <use figures/CTED.png>
 Package pdftex.def Info: figures/CTED.png  used on input line 62.
@@ -2039,17 +2039,50 @@ LaTeX Warning: Reference `fig:maxRFdist' on page 68 undefined on input line 74.
 
 [68 <./figures/CTED.png>]) (./07_comparison.tex [69]
 chapter 8.
-) (./08_conclusion.tex [70
+<figures/time_plot_all.png, id=904, 462.528pt x 346.896pt>
+File: figures/time_plot_all.png Graphic file (type png)
+<use figures/time_plot_all.png>
+Package pdftex.def Info: figures/time_plot_all.png  used on input line 8.
+(pdftex.def)             Requested size: 239.0056pt x 179.2542pt.
+[70
 
-]
+] [71 <./figures/time_plot_all.png>]
+<figures/all_examples_grf_corr_ated.png, id=918, 1474.75969pt x 511.9125pt>
+File: figures/all_examples_grf_corr_ated.png Graphic file (type png)
+<use figures/all_examples_grf_corr_ated.png>
+Package pdftex.def Info: figures/all_examples_grf_corr_ated.png  used on input 
+line 47.
+(pdftex.def)             Requested size: 398.33862pt x 138.26509pt.
+ [72]
+<figures/low_grf_corr_ated.png, id=931, 462.528pt x 346.896pt>
+File: figures/low_grf_corr_ated.png Graphic file (type png)
+<use figures/low_grf_corr_ated.png>
+Package pdftex.def Info: figures/low_grf_corr_ated.png  used on input line 58.
+(pdftex.def)             Requested size: 179.25116pt x 134.43668pt.
+<figures/high_grf_corr_ated.png, id=932, 462.528pt x 346.896pt>
+File: figures/high_grf_corr_ated.png Graphic file (type png)
+<use figures/high_grf_corr_ated.png>
+Package pdftex.def Info: figures/high_grf_corr_ated.png  used on input line 62.
+
+(pdftex.def)             Requested size: 179.25116pt x 134.43668pt.
+ [73 <./figures/all_examples_grf_corr_ated.png>]
+<figures/all_examples_ated_corr_grf.png, id=941, 1734.48pt x 578.16pt>
+File: figures/all_examples_ated_corr_grf.png Graphic file (type png)
+<use figures/all_examples_ated_corr_grf.png>
+Package pdftex.def Info: figures/all_examples_ated_corr_grf.png  used on input 
+line 71.
+(pdftex.def)             Requested size: 398.33862pt x 132.7799pt.
+) (./08_conclusion.tex [74 <./figures/low_grf_corr_ated.png> <./figures/high_gr
+f_corr_ated.png> <./figures/all_examples_ated_corr_grf.png>]
+[75]
 chapter 9.
-[71
+[76
 
-]) (./references.tex [72]
+]) (./references.tex [77]
 chapter without number
-[73
+[78
 
-]) [74]
+]) [79]
 Package atveryend Info: Empty hook `BeforeClearDocument' on input line 158.
 Package atveryend Info: Empty hook `AfterLastShipout' on input line 158.
  (./main.aux)
@@ -2066,11 +2099,11 @@ LaTeX Warning: There were multiply-defined labels.
 
  ) 
 Here is how much of TeX's memory you used:
- 37106 strings out of 480994
- 664990 string characters out of 5916033
- 1457700 words of memory out of 5000000
- 50798 multiletter control sequences out of 15000+600000
- 617070 words of font info for 546 fonts, out of 8000000 for 9000
+ 37175 strings out of 480994
+ 666486 string characters out of 5916033
+ 1458828 words of memory out of 5000000
+ 50836 multiletter control sequences out of 15000+600000
+ 617586 words of font info for 554 fonts, out of 8000000 for 9000
  1143 hyphenation exceptions out of 8191
  76i,28n,108p,10152b,2548s stack positions out of 5000i,500n,10000p,200000b,80000s
 {c:/texlive/2019/texmf-dist/fonts/enc/dvips/base/8r.enc}<c:/texlive/2019/texm
@@ -2090,10 +2123,10 @@ exmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb><c:/texlive/2019/texmf
 -dist/fonts/type1/urw/palatino/uplb8a.pfb><c:/texlive/2019/texmf-dist/fonts/typ
 e1/urw/palatino/uplr8a.pfb><c:/texlive/2019/texmf-dist/fonts/type1/urw/palatino
 /uplri8a.pfb>
-Output written on main.pdf (78 pages, 2418722 bytes).
+Output written on main.pdf (83 pages, 2660764 bytes).
 PDF statistics:
- 1199 PDF objects out of 1200 (max. 8388607)
- 1012 compressed objects within 11 object streams
- 443 named destinations out of 1000 (max. 500000)
- 45628 words of extra memory for PDF output out of 51595 (max. 10000000)
+ 1254 PDF objects out of 1440 (max. 8388607)
+ 1052 compressed objects within 11 object streams
+ 459 named destinations out of 1000 (max. 500000)
+ 45661 words of extra memory for PDF output out of 51595 (max. 10000000)
 
